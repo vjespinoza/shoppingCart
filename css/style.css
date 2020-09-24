@@ -1,7 +1,7 @@
 :root {
   --col1: #dfe7f8;
-  --col2: #9949fa;
-  --col3: #ff0054;
+  --col2: #4361ee;
+  --col3: #f72585;
   --textCol: #343a40;
 }
 
@@ -146,11 +146,11 @@ img {
   overflow: hidden;
 }
 
-.imgWraper img {
+.itemImage {
   transition: ease-in-out 300ms;
 }
 
-.showcaseItem:hover .imgWraper img {
+.showcaseItem:hover .itemImage {
   scale: 1.05;
   transition: ease-in-out 300ms;
 }
@@ -159,35 +159,143 @@ img {
   margin: 0 2rem 2rem 2rem;
 }
 
-.itemDescription > h2 {
+.itemName {
   color: var(--col3);
   font-size: 1.2rem;
   margin-bottom: 0;
+}
+
+.itemModel {
+  font-size: 0.8rem;
+  font-weight: 600;
 }
 
 .itemDescription > ul {
   padding-left: 10px;
 }
 
+.itemDescription > p {
+  margin: 0 0 10px 0;
+}
+
+.itemDescription > ul {
+  margin: 0 0 20px 0;
+}
+
 .itemDescription > p,
 .itemDescription > ul li {
   color: var(--textCol);
   font-size: 0.8rem;
-  margin-top: 0;
 }
 
-.itemDescription > span {
+.itemPrice {
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--col3);
 }
 
-#addToCartBtn {
-  font-size: 1.3rem;
+.addToCartBtn {
+  font-size: 1.1rem;
   padding: 0.8rem;
   border-radius: 50%;
   position: absolute;
   right: 8%;
   bottom: 8%;
   background: var(--col2);
+}
+
+/* ==================================================
+>>>>> (03) - MODAL
+================================================== */
+
+.modalDisplay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  background: #fff;
+  padding: 3rem;
+  border-radius: 25px;
+  box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.8);
+}
+
+.modalDisplay > h2 {
+  font-weight: 600;
+  margin: 0 0 40px 0;
+}
+
+#itemsInfoModal {
+  display: flex;
+  justify-content: space-between;
+}
+
+#itemImageModal.itemImage {
+  width: 55%;
+}
+
+#modalDescription {
+  border-left: 2px solid var(--col1);
+  padding-left: 20px;
+}
+
+#itemNameModal.itemName {
+  color: var(--textCol);
+  font-weight: 600;
+  margin: 0;
+}
+
+.cartTotal,
+#cartTotal {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--col3);
+}
+
+.modalNav {
+  display: block;
+  position: relative;
+  height: 2rem;
+  margin: 40px auto;
+  width: 70%;
+}
+
+.modalInput {
+  font-weight: 700;
+  text-align: center;
+  width: 100%;
+  height: 2rem;
+  outline: none;
+  border-style: none none solid none;
+  border-color: var(--col1);
+  border-width: 1px;
+  background-color: #fff;
+}
+
+.modalBtn {
+  padding: 0.5rem 0.7rem;
+  border: none;
+  outline: none;
+  color: var(--textCol);
+  background: none;
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+}
+
+.modalBtn i {
+  font-weight: 700;
+}
+
+#modalBtnRemove {
+  left: -5%;
+}
+
+#modalBtnAdd {
+  right: -5%;
+}
+
+#modalCofirmBtn.button {
+  display: block;
+  margin: 40px auto 0 auto;
 }
