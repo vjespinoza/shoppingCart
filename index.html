@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="navBar">
+      <nav class="navigation">
+        <span class="logo"> SHOES </span>
+        <div class="menu">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Store</a></li>
+          </ul>
+        </div>
+        <!--menu-->
+      </nav>
+      <div id="shoppingCartDisplay">
+        <a href="cart_details.html" target="_blank">
+          <i id="cartIcon" class="fas fa-shopping-cart"></i>
+          <span id="cartMoney">$120.00</span>
+          <span id="cartItems">(Items: 10)</span>
+        </a>
+        <button id="checkoutBtn" class="button">Checkout</button>
+      </div>
+
+      <!--shoppingCartDisplay-->
+    </div>
+    <!--navBar-->
+
+    <main class="showcase">
+      <section class="showcaseList">
+        <div class="showcaseItem">
+          <div class="imgWraper">
+            <img id="itemImage" src="img/Nike-Men-1.jpg" />
+          </div>
+          <div class="itemDescription">
+            <h2 id="itemName">Nike Men Sport Shoe</h2>
+            <span id="itemModel"></span>
+            <p>Sold by: Nike</p>
+            <ul>
+              <li>Light weight</li>
+              <li>Soft footstep</li>
+              <li>Padded interior</li>
+            </ul>
+            <span id="itemPrice">$121.99</span>
+          </div>
+          <button id="addToCartBtn" class="button"><i class="fas fa-cart-plus"></i></button>
+        </div>
+        <!--showcaseItem-->
+
+        <div class="showcaseItem">
+          <div class="imgWraper">
+            <img id="itemImage" src="img/Nike-Men-2.jpg" />
+          </div>
+          <div class="itemDescription">
+            <h2 id="itemName">Nike Men Sport Shoe</h2>
+            <span id="itemModel"></span>
+            <p>Sold by: Nike</p>
+            <ul>
+              <li>Light weight</li>
+              <li>Soft footstep</li>
+              <li>Padded interior</li>
+            </ul>
+            <span id="itemPrice">$109.99</span>
+          </div>
+          <button id="addToCartBtn" class="button"><i class="fas fa-cart-plus"></i></button>
+        </div>
+        <!--showcaseItem-->
+
+        <div class="showcaseItem">
+          <div class="imgWraper">
+            <img id="itemImage" src="img/Nike-Men-3.jpg" />
+          </div>
+          <div class="itemDescription">
+            <h2 id="itemName">Nike Men Sport Shoe</h2>
+            <span id="itemModel"></span>
+            <p>Sold by: Nike</p>
+            <ul>
+              <li>Light weight</li>
+              <li>Soft footstep</li>
+              <li>Padded interior</li>
+            </ul>
+            <span id="itemPrice">$129.99</span>
+          </div>
+          <button id="addToCartBtn" class="button"><i class="fas fa-cart-plus"></i></button>
+        </div>
+        <!--showcaseItem-->
+
+        <div class="showcaseItem">
+          <div class="imgWraper">
+            <img id="itemImage" src="img/Nike-Men-4.jpg" />
+          </div>
+          <div class="itemDescription">
+            <h2 id="itemName">Nike Men Sport Shoe</h2>
+            <span id="itemModel"></span>
+            <p>Sold by: Nike</p>
+            <ul>
+              <li>Light weight</li>
+              <li>Soft footstep</li>
+              <li>Padded interior</li>
+            </ul>
+            <span id="itemPrice">$89.99</span>
+          </div>
+          <button id="addToCartBtn" class="button"><i class="fas fa-cart-plus"></i></button>
+        </div>
+        <!--showcaseItem-->
+
+        <div class="showcaseItem">
+          <div class="imgWraper">
+            <img id="itemImage" src="img/Nike-Men-5.jpg" />
+          </div>
+          <div class="itemDescription">
+            <h2 id="itemName">Nike Men Sport Shoe</h2>
+            <span id="itemModel"></span>
+            <p>Sold by: Nike</p>
+            <ul>
+              <li>Light weight</li>
+              <li>Soft footstep</li>
+              <li>Padded interior</li>
+            </ul>
+            <span id="itemPrice">$114.99</span>
+          </div>
+          <button id="addToCartBtn" class="button"><i class="fas fa-cart-plus"></i></button>
+        </div>
+        <!--showcaseItem-->
+
+        <div class="showcaseItem">
+          <div class="imgWraper">
+            <img id="itemImage" src="img/Nike-Women-1.jpg" />
+          </div>
+          <div class="itemDescription">
+            <h2 id="itemName">Nike Women Sport Shoe</h2>
+            <span id="itemModel"></span>
+            <p>Sold by: Nike</p>
+            <ul>
+              <li>Light weight</li>
+              <li>Soft footstep</li>
+              <li>Padded interior</li>
+            </ul>
+            <span id="itemPrice">$109.99</span>
+          </div>
+          <button id="addToCartBtn" class="button"><i class="fas fa-cart-plus"></i></button>
+        </div>
+        <!--showcaseItem-->
+
+        <div class="showcaseItem">
+          <div class="imgWraper">
+            <img id="itemImage" src="img/Nike-Women-2.jpg" />
+          </div>
+          <div class="itemDescription">
+            <h2 id="itemName">Nike Women Sport Shoe</h2>
+            <span id="itemModel"></span>
+            <p>Sold by: Nike</p>
+            <ul>
+              <li>Light weight</li>
+              <li>Soft footstep</li>
+              <li>Padded interior</li>
+            </ul>
+            <span id="itemPrice">$112.99</span>
+          </div>
+          <button id="addToCartBtn" class="button"><i class="fas fa-cart-plus"></i></button>
+        </div>
+        <!--showcaseItem-->
+
+        <div class="showcaseItem">
+          <div class="imgWraper">
+            <img id="itemImage" src="img/Nike-Women-3.jpg" />
+          </div>
+          <div class="itemDescription">
+            <h2 id="itemName">Nike Women Sport Shoe</h2>
+            <span id="itemModel"></span>
+            <p>Sold by: Nike</p>
+            <ul>
+              <li>Light weight</li>
+              <li>Soft footstep</li>
+              <li>Padded interior</li>
+            </ul>
+            <span id="itemPrice">$97.99</span>
+          </div>
+          <button id="addToCartBtn" class="button"><i class="fas fa-cart-plus"></i></button>
+        </div>
+        <!--showcaseItem-->
+
+        <div class="showcaseItem">
+          <div class="imgWraper">
+            <img id="itemImage" src="img/Nike-Women-4.jpg" />
+          </div>
+          <div class="itemDescription">
+            <h2 id="itemName">Nike Women Sport Shoe</h2>
+            <span id="itemModel"></span>
+            <p>Sold by: Nike</p>
+            <ul>
+              <li>Light weight</li>
+              <li>Soft footstep</li>
+              <li>Padded interior</li>
+            </ul>
+            <span id="itemPrice">$104.99</span>
+          </div>
+          <button id="addToCartBtn" class="button"><i class="fas fa-cart-plus"></i></button>
+        </div>
+        <!--showcaseItem-->
+
+        <div class="showcaseItem">
+          <div class="imgWraper">
+            <img id="itemImage" src="img/Nike-Women-5.jpg" />
+          </div>
+          <div class="itemDescription">
+            <h2 id="itemName">Nike Women Sport Shoe</h2>
+            <span id="itemModel"></span>
+            <p>Sold by: Nike</p>
+            <ul>
+              <li>Light weight</li>
+              <li>Soft footstep</li>
+              <li>Padded interior</li>
+            </ul>
+            <span id="itemPrice">$99.99</span>
+          </div>
+          <button id="addToCartBtn" class="button"><i class="fas fa-cart-plus"></i></button>
+        </div>
+        <!--showcaseItem-->
+      </section>
+    </main>
+
+    <div class="modalDisplay" id="modal"></div>
+    <script src="js/main.js"></script>
+  </body>
+</html>
