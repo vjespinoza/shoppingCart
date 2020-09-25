@@ -13,9 +13,10 @@ const shopItems = {
 function getButtonId() {
   shopItems.addToCartBtn.forEach((addCartBtn) => {
     addCartBtn.addEventListener("click", (e) => {
+      //Gets addToCartBtn button ID's last two characters
       var btnId = e.target.getAttribute("id");
       btnId = btnId.slice(btnId.length - 2);
-      console.log(btnId);
+      // console.log(btnId);
       return btnId;
     });
   });
@@ -26,14 +27,19 @@ function getPriceId() {
     itemPriceTag.addEventListener("click", (e) => {
       var priceId = e.target.getAttribute("id");
       priceId = priceId.slice(priceId.length - 2);
-      console.log(priceId);
+      // console.log(priceId);
       return priceId;
     });
   });
 }
 
-getButtonId();
-getPriceId();
+function testTest() {
+  let a = getButtonId();
+  let b = getPriceId();
+  console.log(a + b);
+}
+
+testTest();
 
 // console.log(shopItems.);
 // console.log(itemName);
