@@ -1,14 +1,25 @@
 //First test
 //Store information inside an object
 
-const productList = {
-  itemImage: document.querySelectorAll(".itemImage"),
-  itemName: document.querySelectorAll(".itemName"),
-  itemModel: document.querySelectorAll(".itemModel"),
-  itemPrice: document.querySelectorAll(".itemPrice"),
-};
+let itemImage = document.querySelectorAll(".itemImage");
+let itemName = document.querySelectorAll(".itemName");
+let itemModel = document.querySelectorAll(".itemModel");
+let itemPrice = document.querySelectorAll(".itemPrice");
+let addToCartBtn = document.querySelectorAll(".addToCartBtn");
+let money = document.getElementById("cartMoney");
 
-console.log(productList.itemImage);
-console.log(productList.itemName);
-console.log(productList.itemModel);
-console.log(productList.itemPrice);
+addToCartBtn.forEach((addCartBtn) => {
+  addCartBtn.addEventListener("click", () => {
+    itemPrice.forEach((price) => {
+      money.innerHTML = `fucking fuck ${price.innerHTML}`;
+      console.log(price.innerHTML);
+    });
+    this.price;
+  });
+});
+
+// console.log(itemImage);
+// console.log(itemName);
+// console.log(itemModel);
+// console.log(itemPrice);
+// console.log(addToCartBtn);

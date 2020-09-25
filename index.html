@@ -29,8 +29,8 @@
       <div id="shoppingCartDisplay">
         <a href="cart_details.html" target="_blank">
           <i id="cartIcon" class="fas fa-shopping-cart"></i>
-          <span id="cartMoney">$120.00</span>
-          <span id="cartItems">(Items: 10)</span>
+          <span id="cartMoney"></span>
+          <span id="cartItems"></span>
         </a>
         <button id="checkoutBtn" class="button">Checkout</button>
       </div>
@@ -237,10 +237,11 @@
       <h2>Product(s) added to your cart:</h2>
 
       <div id="itemsInfoModal">
-        <div id="itemImageModal" class="itemImage"><img src="img/Nike-Men-1.jpg" /></div>
+        <div id="itemImageModal"><img src="img/Nike-Men-1.jpg" /></div>
+
         <div id="modalDescription">
-          <h2 id="itemNameModal" class="itemName">Nike Men Sport Shoe</h2>
-          <span id="itemModelModal" class="itemModel">NM-7690</span>
+          <h2 id="itemNameModal">Nike Men Sport Shoe</h2>
+          <span id="itemModelModal">NM-7690</span>
           <nav class="modalNav">
             <button class="modalBtn" id="modalBtnRemove"><i class="fas fa-minus"></i></button>
             <input class="modalInput" id="modalQuantityDisplay" type="text" value="55" disabled />
@@ -248,6 +249,7 @@
           </nav>
           <p class="cartTotal">Total: <span id="cartTotal">$600.00</span></p>
         </div>
+        <!--modalDescription-->
       </div>
       <!--itemsInfoModal-->
 
