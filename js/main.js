@@ -8,34 +8,41 @@ const shopItems = {
   itemPrice: document.querySelectorAll(".itemPrice"),
   addToCartBtn: document.querySelectorAll(".addToCartBtn"),
   money: document.getElementById("cartMoney"),
-  getIdPairs: function () {
-    let a = shopItems.itemPrice.forEach((price) => {
-      var i = price.getAttribute("id");
-      i.slice(i.length - 2);
-    });
-
-    let b = shopItems.addToCartBtn.forEach((btn) => {
-      var i = btn.getAttribute("id");
-      i.slice(i.length - 2);
-    });
-
-    // let c = [a * 2] - b;
-    // let c = 2;
-
-    if (a == b) {
-      return (shopItems.money.innerHTML = `${c}`);
-    }
-  },
 };
 
-shopItems.addToCartBtn.forEach((addCartBtn) => {
-  addCartBtn.addEventListener("click", () => {
-    shopItems.getIdPairs();
+function getButtonId() {
+  shopItems.addToCartBtn.forEach((addCartBtn) => {
+    addCartBtn.addEventListener("click", (e) => {
+      var btnId = e.target.getAttribute("id");
+      btnId = btnId.slice(btnId.length - 2);
+      console.log(btnId);
+      return btnId;
+    });
   });
-});
+}
+
+function getPriceId() {
+  shopItems.itemPrice.forEach((itemPriceTag) => {
+    itemPriceTag.addEventListener("click", (e) => {
+      var priceId = e.target.getAttribute("id");
+      priceId = priceId.slice(priceId.length - 2);
+      console.log(priceId);
+      return priceId;
+    });
+  });
+}
+
+getButtonId();
+getPriceId();
 
 // console.log(shopItems.);
 // console.log(itemName);
 // console.log(itemModel);
 // console.log(itemPrice);
 // console.log(addToCartBtn);
+
+//Gets last 2 digits of the elemt's ID
+// shopItems.itemPrice.forEach((price) => {
+//   var i = price.getAttribute("id");
+//   console.log(i.slice(i.length - 2));
+// });
