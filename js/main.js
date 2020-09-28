@@ -16,6 +16,9 @@ let displayModalQty = document.getElementById("modalQuantityDisplay");
 let displayModalName = document.getElementById("itemNameModal");
 let displayModalModel = document.getElementById("itemModelModal");
 let displayModalImage = document.getElementById("itemImageModal");
+let modalBtnAdd = document.getElementById("modalBtnAdd");
+let modalBtnRemove = document.getElementById("modalBtnRemove");
+let modalCofirmBtn = document.getElementById("modalCofirmBtn");
 
 //Click event listener for .addToCartBtn
 addToCartBtn.forEach((addCartBtn) => {
@@ -57,10 +60,29 @@ addToCartBtn.forEach((addCartBtn) => {
       }
     }
 
-    function modalQuantity() {}
-
     updatePriceDisplay();
     updateModal();
-    modalQuantity();
   });
+});
+
+modalBtnAdd.addEventListener("click", () => {
+  var a = parseInt(displayModalQty.value);
+  var b = (displayModalQty.value = ++a);
+  // var c = parseFloat(displayModalTotal);
+  var c = parseFloat(displayModalTotal.innerHTML.slice(1));
+  var total = a * c;
+
+  console.log(b);
+  console.log(c);
+  // console.log(`Result is ${total}`);
+
+  displayModalTotal.innerHTML = `$${total.toFixed(2)}`;
+});
+
+modalBtnRemove.addEventListener("click", () => {
+  alert("Remove");
+});
+
+modalCofirmBtn.addEventListener("click", () => {
+  alert("Confirm");
 });
