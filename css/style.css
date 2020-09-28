@@ -215,7 +215,7 @@ i {
 ================================================== */
 
 .modalDisplay {
-  display: block;
+  display: none;
   position: fixed;
   top: 65%;
   left: 50%;
@@ -251,6 +251,14 @@ i {
   color: var(--textCol);
   font-weight: 600;
   margin: 0;
+}
+
+.cartPrice,
+#cartPrice {
+  text-align: right;
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--textCol);
 }
 
 .cartTotal,
@@ -307,4 +315,12 @@ i {
 #modalCofirmBtn.button {
   display: block;
   margin: 40px auto 0 auto;
+}
+
+.preventScroll {
+  overflow: hidden;
+}
+
+.preventClick {
+  pointer-events: none;
 }
