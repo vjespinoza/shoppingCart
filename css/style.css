@@ -215,7 +215,7 @@ i {
 ================================================== */
 
 .modalDisplay {
-  display: none;
+  display: block;
   position: fixed;
   top: 65%;
   left: 50%;
@@ -238,7 +238,7 @@ i {
 }
 
 #itemImageModal {
-  width: 55%;
+  width: 90%;
   padding-right: 20px;
 }
 
