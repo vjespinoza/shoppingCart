@@ -43,18 +43,17 @@ addToCartBtn.forEach((addCartBtn) => {
       var x = itemPrice.item(btnId).id.slice(length - 2) - 1;
       //Gets innerHTML content ox x, and slices the first character ($).
       var z = parseFloat(itemPrice.item(btnId).innerHTML.slice(1));
-      var img = itemImage.item(btnId)
+      var img = itemImage.item(btnId).getAttribute("src");
 
       var name = itemName.item(btnId).innerHTML;
       var model = itemModel.item(btnId).innerHTML;
-      
+
       if (btnId == x) {
         displayModalTotal.innerHTML = `$${z}`;
         displayModalQty.value = 1;
         displayModalName.innerHTML = name.toUpperCase();
         displayModalModel.innerHTML = model.toUpperCase();
-        displayModalImage.innerHTML = 
-
+        displayModalImage.innerHTML = `<img src="${img}" />`;
       }
     }
 
