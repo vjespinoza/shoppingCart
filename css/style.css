@@ -122,6 +122,11 @@ i {
   margin: 10rem 0 7rem 0;
 }
 
+@media (max-width: 768px) {
+  .showcase {
+    padding: 0 2rem;
+  }
+}
 /* ==================================================
 >>>>> (02.A) - SHOWCASE LIST
 ================================================== */
@@ -130,6 +135,7 @@ i {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
+  justify-items: center;
 }
 
 /* ==================================================
