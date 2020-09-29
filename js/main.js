@@ -25,19 +25,19 @@ let modalCofirmBtn = document.getElementById("modalCofirmBtn");
 //Click event listener for .addToCartBtn
 addToCartBtn.forEach((addCartBtn) => {
   addCartBtn.addEventListener("click", (e) => {
-    function updatePriceDisplay() {
-      //Gets addToCartBtn ID as string and slice last two characters
-      var btnId = e.target.getAttribute("id");
-      btnId = btnId.slice(btnId.length - 2) - 1;
-      //btnId defines the item position for itemPrice, then gets ID
-      //as string and slice last two characters
-      var x = itemPrice.item(btnId).id.slice(length - 2) - 1;
-      //Gets innerHTML content of x, and slices the first character ($).
-      var z = parseFloat(itemPrice.item(btnId).innerHTML.slice(1));
-      if (btnId == x) {
-        displayMoney.innerHTML = `$${z}`;
-      }
-    }
+    // function updatePriceDisplay() {
+    //   //Gets addToCartBtn ID as string and slice last two characters
+    //   var btnId = e.target.getAttribute("id");
+    //   btnId = btnId.slice(btnId.length - 2) - 1;
+    //   //btnId defines the item position for itemPrice, then gets ID
+    //   //as string and slice last two characters
+    //   var x = itemPrice.item(btnId).id.slice(length - 2) - 1;
+    //   //Gets innerHTML content of x, and slices the first character ($).
+    //   var z = parseFloat(itemPrice.item(btnId).innerHTML.slice(1));
+    //   if (btnId == x) {
+    //     displayMoney.innerHTML = `$${z}`;
+    //   }
+    // }
 
     //Click event to prevent pointer events when modal is active
 
@@ -67,7 +67,7 @@ addToCartBtn.forEach((addCartBtn) => {
       }
     }
 
-    updatePriceDisplay();
+    // updatePriceDisplay();
     updateModal();
   });
 });
@@ -96,4 +96,10 @@ modalBtnRemove.addEventListener("click", () => {
 
 modalCofirmBtn.addEventListener("click", () => {
   modal.style.display = "none";
+
+  let wap = parseFloat((displayMoney.innerHTML = 0));
+  let wep = parseFloat(displayModalTotal.innerHTML.slice(1));
+  console.log(wap);
+  console.log(wep);
+  console.log((displayMoney.innerHTML = wap += wep));
 });
