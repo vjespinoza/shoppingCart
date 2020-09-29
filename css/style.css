@@ -217,9 +217,9 @@ i {
 .modalDisplay {
   display: none;
   position: fixed;
-  top: 65%;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, -65%);
+  transform: translate(-50%, -50%);
   width: 40%;
   background: #fff;
   padding: 3rem;
@@ -312,9 +312,26 @@ i {
   right: -5%;
 }
 
+.modalBtns {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+}
+
 #modalCofirmBtn.button {
   display: block;
-  margin: 40px auto 0 auto;
+  margin-top: 40px;
+  width: 120px;
+  padding: 0.8rem 0;
+}
+
+#modalCancelBtn.button {
+  display: block;
+  margin-top: 40px;
+  background: transparent;
+  border: 1px solid var(--col3);
+  color: var(--col3);
+  width: 120px;
 }
 
 .preventScroll {

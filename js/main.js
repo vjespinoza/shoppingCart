@@ -10,6 +10,8 @@ let addToCartBtn = document.querySelectorAll(".addToCartBtn");
 //Cart display elements
 let displayMoney = document.getElementById("cartMoney");
 let displayItems = document.getElementById("cartItems");
+let displayMoneyTotal = [];
+let displayItemsTotal = [];
 //Modal elements
 let modal = document.getElementById("modal");
 let displayModalPrice = document.getElementById("cartPrice");
@@ -21,6 +23,7 @@ let displayModalImage = document.getElementById("itemImageModal");
 let modalBtnAdd = document.getElementById("modalBtnAdd");
 let modalBtnRemove = document.getElementById("modalBtnRemove");
 let modalCofirmBtn = document.getElementById("modalCofirmBtn");
+let modalCancelBtn = document.getElementById("modalCancelBtn");
 
 //Click event listener for .addToCartBtn
 addToCartBtn.forEach((addCartBtn) => {
@@ -97,9 +100,28 @@ modalBtnRemove.addEventListener("click", () => {
 modalCofirmBtn.addEventListener("click", () => {
   modal.style.display = "none";
 
-  let wap = parseFloat((displayMoney.innerHTML = 0));
-  let wep = parseFloat(displayModalTotal.innerHTML.slice(1));
-  console.log(wap);
-  console.log(wep);
-  console.log((displayMoney.innerHTML = wap += wep));
+  //Stores displayModalTotal values into an array | let displayMoneyTotal = [];
+  displayMoneyTotal.push(displayModalTotal.innerHTML.slice(1));
+
+  //Sums all values of the array using reduce()
+  //and displays the result on displayMoney.innerHTML
+  displayMoney.innerHTML = displayMoneyTotal.reduce(addTotals);
+
+  //Function required to proerly use reduce()
+  function addTotals(total, newTotal) {
+    return (parseFloat(total) + parseFloat(newTotal)).toFixed(2);
+  }
+
+  //Same as above for the number of items on the cart
+  displayItemsTotal.push(displayModalQty.value);
+
+  displayItems.innerHTML = `(Items: ${displayItemsTotal.reduce(itemsTotal)})`;
+
+  function itemsTotal(item, newItem) {
+    return parseInt(item) + parseInt(newItem);
+  }
+});
+
+modalCancelBtn.addEventListener("click", () => {
+  modal.style.display = "none";
 });
