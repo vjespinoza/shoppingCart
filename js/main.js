@@ -54,7 +54,7 @@ addToCartBtn.forEach((addCartBtn) => {
       //as string and slice last two characters
       var x = itemPrice.item(btnId).id.slice(length - 2) - 1;
       //Gets innerHTML content ox x, and slices the first character ($).
-      var z = parseFloat(itemPrice.item(btnId).innerHTML.slice(1));
+      var z = parseFloat(itemPrice.item(btnId).innerHTML);
 
       var img = itemImage.item(btnId).getAttribute("src");
 
@@ -62,18 +62,20 @@ addToCartBtn.forEach((addCartBtn) => {
       var model = itemModel.item(btnId).innerHTML;
 
       if (btnId == x) {
-        displayModalTotal.innerHTML = `$${z}`;
-        displayModalPrice.innerHTML = `$${z}`;
+        displayModalTotal.innerHTML = `${z}`;
+        displayModalPrice.innerHTML = `${z}`;
         displayModalQty.value = 1;
         displayModalName.innerHTML = name.toUpperCase();
         displayModalModel.innerHTML = model.toUpperCase();
         displayModalImage.innerHTML = `<img src="${img}" />`;
       }
 
-      console.log(z);
+      console.log(`BtnId: ${btnId}`);
+      console.log(`x: ${x}`);
+      console.log(`z: ${z}`);
       // console.log(z.toLocaleString());
-      console.log(typeof z);
-      console.log(isNaN(z));
+      console.log(`typeOf z: ${typeof z}`);
+      console.log(`isNaN(z): ${isNaN(z)}`);
     }
 
     // updatePriceDisplay();
@@ -84,22 +86,25 @@ addToCartBtn.forEach((addCartBtn) => {
 modalBtnAdd.addEventListener("click", () => {
   var a = parseInt(displayModalQty.value);
   displayModalQty.value = ++a;
-  var b = displayModalPrice.innerHTML.slice(1);
+  var b = parseFloat(displayModalPrice.innerHTML);
   var total = a * b;
 
-  displayModalTotal.innerHTML = `$${total.toFixed(2)}`;
+  console.log(b);
+  console.log(total);
+
+  displayModalTotal.innerHTML = `${total.toFixed(2)}`;
 });
 
 modalBtnRemove.addEventListener("click", () => {
   var a = parseInt(displayModalQty.value);
   displayModalQty.value = --a;
-  var b = displayModalPrice.innerHTML.slice(1);
+  var b = parseFloat(displayModalPrice.innerHTML);
   var total = a * b;
 
   if (total <= 0) {
     displayModalQty.value = 1;
   } else {
-    displayModalTotal.innerHTML = `$${total.toFixed(2)}`;
+    displayModalTotal.innerHTML = `${total.toFixed(2)}`;
   }
 });
 
@@ -107,11 +112,13 @@ modalCofirmBtn.addEventListener("click", () => {
   modal.style.display = "none";
 
   //Stores displayModalTotal values into an array | let displayMoneyTotal = [];
-  displayMoneyTotal.push(displayModalTotal.innerHTML.slice(1));
+  displayMoneyTotal.push(displayModalTotal.innerHTML);
+  console.log(displayMoneyTotal);
 
   //Sums all values of the array using reduce()
   //and displays the result on displayMoney.innerHTML
-  displayMoney.innerHTML = displayMoneyTotal.reduce(addTotals);
+  displayMoney.innerHTML = `$${displayMoneyTotal.reduce(addTotals)}`;
+  console.log((displayMoney.innerHTML = `$${displayMoneyTotal.reduce(addTotals)}`));
 
   //Function required to proerly use reduce()
   function addTotals(total, newTotal) {
