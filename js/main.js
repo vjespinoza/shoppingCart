@@ -28,21 +28,7 @@ let modalCancelBtn = document.getElementById("modalCancelBtn");
 //Click event listener for .addToCartBtn
 addToCartBtn.forEach((addCartBtn) => {
   addCartBtn.addEventListener("click", (e) => {
-    // function updatePriceDisplay() {
-    //   //Gets addToCartBtn ID as string and slice last two characters
-    //   var btnId = e.target.getAttribute("id");
-    //   btnId = btnId.slice(btnId.length - 2) - 1;
-    //   //btnId defines the item position for itemPrice, then gets ID
-    //   //as string and slice last two characters
-    //   var x = itemPrice.item(btnId).id.slice(length - 2) - 1;
-    //   //Gets innerHTML content of x, and slices the first character ($).
-    //   var z = parseFloat(itemPrice.item(btnId).innerHTML.slice(1));
-    //   if (btnId == x) {
-    //     displayMoney.innerHTML = `$${z}`;
-    //   }
-    // }
-
-    //Click event to prevent pointer events when modal is active
+    //PENDING!!! Click event to prevent pointer events when modal is active
 
     function updateModal() {
       modal.style.display = "block";
@@ -54,28 +40,21 @@ addToCartBtn.forEach((addCartBtn) => {
       //as string and slice last two characters
       var x = itemPrice.item(btnId).id.slice(length - 2) - 1;
       //Gets innerHTML content ox x, and slices the first character ($).
-      var z = parseFloat(itemPrice.item(btnId).innerHTML);
+      var z = parseFloat(itemPrice.item(btnId).innerText);
 
       var img = itemImage.item(btnId).getAttribute("src");
 
-      var name = itemName.item(btnId).innerHTML;
-      var model = itemModel.item(btnId).innerHTML;
+      var name = itemName.item(btnId).innerText;
+      var model = itemModel.item(btnId).innerText;
 
       if (btnId == x) {
-        displayModalTotal.innerHTML = `${z}`;
-        displayModalPrice.innerHTML = `${z}`;
+        displayModalTotal.innerText = `${z}`;
+        displayModalPrice.innerText = `${z}`;
         displayModalQty.value = 1;
-        displayModalName.innerHTML = name.toUpperCase();
-        displayModalModel.innerHTML = model.toUpperCase();
+        displayModalName.innerText = name.toUpperCase();
+        displayModalModel.innerText = model.toUpperCase();
         displayModalImage.innerHTML = `<img src="${img}" />`;
       }
-
-      console.log(`BtnId: ${btnId}`);
-      console.log(`x: ${x}`);
-      console.log(`z: ${z}`);
-      // console.log(z.toLocaleString());
-      console.log(`typeOf z: ${typeof z}`);
-      console.log(`isNaN(z): ${isNaN(z)}`);
     }
 
     // updatePriceDisplay();
@@ -86,25 +65,22 @@ addToCartBtn.forEach((addCartBtn) => {
 modalBtnAdd.addEventListener("click", () => {
   var a = parseInt(displayModalQty.value);
   displayModalQty.value = ++a;
-  var b = parseFloat(displayModalPrice.innerHTML);
+  var b = parseFloat(displayModalPrice.innerText);
   var total = a * b;
 
-  console.log(b);
-  console.log(total);
-
-  displayModalTotal.innerHTML = `${total.toFixed(2)}`;
+  displayModalTotal.innerText = `${total.toFixed(2)}`;
 });
 
 modalBtnRemove.addEventListener("click", () => {
   var a = parseInt(displayModalQty.value);
   displayModalQty.value = --a;
-  var b = parseFloat(displayModalPrice.innerHTML);
+  var b = parseFloat(displayModalPrice.innerText);
   var total = a * b;
 
   if (total <= 0) {
     displayModalQty.value = 1;
   } else {
-    displayModalTotal.innerHTML = `${total.toFixed(2)}`;
+    displayModalTotal.innerText = `${total.toFixed(2)}`;
   }
 });
 
@@ -112,13 +88,11 @@ modalCofirmBtn.addEventListener("click", () => {
   modal.style.display = "none";
 
   //Stores displayModalTotal values into an array | let displayMoneyTotal = [];
-  displayMoneyTotal.push(displayModalTotal.innerHTML);
-  console.log(displayMoneyTotal);
+  displayMoneyTotal.push(displayModalTotal.innerText);
 
   //Sums all values of the array using reduce()
-  //and displays the result on displayMoney.innerHTML
-  displayMoney.innerHTML = `$${displayMoneyTotal.reduce(addTotals)}`;
-  console.log((displayMoney.innerHTML = `$${displayMoneyTotal.reduce(addTotals)}`));
+  //and displays the result on displayMoney.innerText
+  displayMoney.innerText = `$${displayMoneyTotal.reduce(addTotals)}`;
 
   //Function required to proerly use reduce()
   function addTotals(total, newTotal) {
@@ -128,7 +102,7 @@ modalCofirmBtn.addEventListener("click", () => {
   //Same as above for the number of items on the cart
   displayItemsTotal.push(displayModalQty.value);
 
-  displayItems.innerHTML = `(Items: ${displayItemsTotal.reduce(itemsTotal)})`;
+  displayItems.innerText = `(Items: ${displayItemsTotal.reduce(itemsTotal)})`;
 
   function itemsTotal(item, newItem) {
     return parseInt(item) + parseInt(newItem);
