@@ -55,6 +55,7 @@ addToCartBtn.forEach((addCartBtn) => {
       var x = itemPrice.item(btnId).id.slice(length - 2) - 1;
       //Gets innerHTML content ox x, and slices the first character ($).
       var z = parseFloat(itemPrice.item(btnId).innerHTML.slice(1));
+
       var img = itemImage.item(btnId).getAttribute("src");
 
       var name = itemName.item(btnId).innerHTML;
@@ -68,6 +69,11 @@ addToCartBtn.forEach((addCartBtn) => {
         displayModalModel.innerHTML = model.toUpperCase();
         displayModalImage.innerHTML = `<img src="${img}" />`;
       }
+
+      console.log(z);
+      // console.log(z.toLocaleString());
+      console.log(typeof z);
+      console.log(isNaN(z));
     }
 
     // updatePriceDisplay();
