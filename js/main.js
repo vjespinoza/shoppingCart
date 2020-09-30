@@ -66,12 +66,13 @@ addToCartBtn.forEach((addCartBtn) => {
 
 modalBtnAdd.addEventListener("click", () => {
   let x = parseFloat(displayModalPrice.innerText);
-  let y = x.toLocaleString("en-US", {
-    style: "decimal",
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  });
-  console.log(y);
+  let y = parseFloat(
+    x.toLocaleString("en-US", {
+      style: "decimal",
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    })
+  );
 
   var a = parseInt(displayModalQty.value);
   displayModalQty.value = ++a;
@@ -102,11 +103,9 @@ modalCofirmBtn.addEventListener("click", () => {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
   });
-  console.log(y);
 
   //Stores displayModalTotal values into an array | let displayMoneyTotal = [];
   displayMoneyTotal.push(y);
-  console.log(displayMoneyTotal);
 
   //Sums all values of the array using reduce()
   //and displays the result on displayMoney.innerText
