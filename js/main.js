@@ -7,11 +7,13 @@ let itemName = document.querySelectorAll(".itemName");
 let itemModel = document.querySelectorAll(".itemModel");
 let itemPrice = document.querySelectorAll(".itemPrice");
 let addToCartBtn = document.querySelectorAll(".addToCartBtn");
+
 //Cart display elements
 let displayMoney = document.getElementById("cartMoney");
 let displayItems = document.getElementById("cartItems");
 let displayMoneyTotal = [];
 let displayItemsTotal = [];
+
 //Modal elements
 let modal = document.getElementById("modal");
 let displayModalPrice = document.getElementById("cartPrice");
@@ -63,10 +65,17 @@ addToCartBtn.forEach((addCartBtn) => {
 });
 
 modalBtnAdd.addEventListener("click", () => {
+  let x = parseFloat(displayModalPrice.innerText);
+  let y = x.toLocaleString("en-US", {
+    style: "decimal",
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+  console.log(y);
+
   var a = parseInt(displayModalQty.value);
   displayModalQty.value = ++a;
-  var b = parseFloat(displayModalPrice.innerText);
-  var total = a * b;
+  var total = a * y;
 
   displayModalTotal.innerText = `${total.toFixed(2)}`;
 });
@@ -87,8 +96,17 @@ modalBtnRemove.addEventListener("click", () => {
 modalCofirmBtn.addEventListener("click", () => {
   modal.style.display = "none";
 
+  let x = parseFloat(displayModalTotal.innerText);
+  let y = x.toLocaleString("es-US", {
+    style: "decimal",
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+  console.log(y);
+
   //Stores displayModalTotal values into an array | let displayMoneyTotal = [];
-  displayMoneyTotal.push(displayModalTotal.innerText);
+  displayMoneyTotal.push(y);
+  console.log(displayMoneyTotal);
 
   //Sums all values of the array using reduce()
   //and displays the result on displayMoney.innerText
