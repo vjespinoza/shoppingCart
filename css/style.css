@@ -3,7 +3,7 @@
   --col2: #4361ee;
   --col3: #f72585;
   --textCol: #343a40;
-  --bgCol: #bee3db;
+  --bgCol: #eae6fd;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap");
@@ -172,7 +172,7 @@ i {
 
 .itemName {
   color: var(--col3);
-  text-transform: capitalize;
+  text-transform: uppercase;
   font-size: 1rem;
   margin-bottom: 0;
 }
@@ -276,15 +276,23 @@ i {
   color: var(--col3);
 }
 
-.modalNav {
+.modalNav,
+.cartDetailNav {
   display: block;
   position: relative;
   height: 2rem;
+}
+
+.modalNav {
   margin: 40px auto 50px auto;
   width: 70%;
 }
+.cartDetailNav {
+  width: 40%;
+}
 
-.modalInput {
+.modalInput,
+.cartDetailInput {
   font-weight: 700;
   text-align: center;
   width: 100%;
@@ -296,7 +304,8 @@ i {
   background-color: #fff;
 }
 
-.modalBtn {
+.modalBtn,
+.cartDetailBtn {
   padding: 0.5rem 0.7rem;
   border: none;
   outline: none;
@@ -311,11 +320,13 @@ i {
   font-weight: 700;
 }
 
-#modalBtnRemove {
+#modalBtnRemove,
+#detailBtnRemove {
   left: -5%;
 }
 
-#modalBtnAdd {
+#modalBtnAdd,
+#detailBtnAdd {
   right: -5%;
 }
 
@@ -347,4 +358,109 @@ i {
 
 .preventClick {
   pointer-events: none;
+}
+
+/* ==================================================
+>>>>> (04) - Cart Details
+================================================== */
+
+#modalCartDetail {
+  display: grid;
+  /* visibility: hidden; */
+  grid-template-columns: 3fr 1fr;
+  gap: 1rem;
+  position: fixed;
+  top: 3rem;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bgCol);
+  z-index: 50;
+  padding: 4rem 8rem;
+  overflow-y: scroll;
+}
+
+.cartItemsList {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+.cartDetailSumary {
+  display: block;
+  top: 7rem;
+  right: 8rem;
+  background-color: #fff;
+  width: 20rem;
+  height: 21rem;
+}
+
+.cartDetailItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  width: 100%;
+  height: 10rem;
+  background-color: #fff;
+  margin-bottom: 1rem;
+}
+
+.detailInfoWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.itemNameDetail {
+  color: var(--col3);
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  margin: 0 0 0.4rem 0;
+}
+
+.itemModelDetail {
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.cartDetailPrice,
+.cartDetailPrice > #cartPrice {
+  margin: 1rem 0 0 0;
+  font-size: 0.1.2rem;
+  /* font-weight: bold; */
+}
+
+.itemImageWraper {
+  width: 12rem;
+  margin-right: 1rem;
+}
+
+.detailNavWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.detailNavWrapper > .cartTotal {
+  margin-bottom: 0;
+}
+
+/* ==================================================
+>>>>> (05) - Checkout Page
+================================================== */
+
+#paymentModule {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 3rem);
+  padding: 0 4rem;
+}
+
+#paymentModule h1 {
+  margin-top: 3rem;
+  font-size: 10rem;
+  text-transform: uppercase;
 }

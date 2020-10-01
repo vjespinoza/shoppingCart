@@ -108,7 +108,7 @@ modalCofirmBtn.addEventListener("click", () => {
     return (parseFloat(total) + parseFloat(newTotal)).toFixed(2);
   }
 
-  //Same as above for the number of items on the cart
+  //Same as above for the number of items on the cart.
   displayItemsTotal.push(displayModalQty.value);
 
   displayItems.innerText = `(Items: ${displayItemsTotal.reduce(itemsTotal)})`;
@@ -121,3 +121,14 @@ modalCofirmBtn.addEventListener("click", () => {
 modalCancelBtn.addEventListener("click", () => {
   modal.style.display = "none";
 });
+
+//CHECKOUT+++++++++++++++++++++++
+
+let checkoutBtn = document.getElementById("checkoutBtn");
+
+checkoutBtn.addEventListener("click", () => {
+  console.log("Fucking fuck!");
+  window.open("/checkout.html");
+});
+
+console.log(checkoutBtn);

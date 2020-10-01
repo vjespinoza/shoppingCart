@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart Details</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="navBar">
+      <nav class="navigation">
+        <span class="logo"><a href="/">SHOES</a></span>
+        <div class="menu">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Store</a></li>
+          </ul>
+        </div>
+        <!--menu-->
+      </nav>
+
+      <div id="shoppingCartDisplay">
+        <a href="cart_details.html" target="_blank">
+          <i id="cartIcon" class="fas fa-shopping-cart"></i>
+          <span id="cartMoney"></span>
+          <span id="cartItems"></span>
+        </a>
+        <button id="checkoutBtn" class="button checkoutBtn">Checkout</button>
+      </div>
+
+      <!--shoppingCartDisplay-->
+    </div>
+    <!--navBar-->
+
+    <main class="showcase">
+      <section class="showcaseList"></section>
+    </main>
+
+    <script src="js/second.js"></script>
+  </body>
+</html>
