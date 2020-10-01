@@ -65,18 +65,10 @@ addToCartBtn.forEach((addCartBtn) => {
 });
 
 modalBtnAdd.addEventListener("click", () => {
-  let x = parseFloat(displayModalPrice.innerText);
-  let y = parseFloat(
-    x.toLocaleString("en-US", {
-      style: "decimal",
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    })
-  );
-
   var a = parseInt(displayModalQty.value);
   displayModalQty.value = ++a;
-  var total = a * y;
+  var b = parseFloat(displayModalPrice.innerText);
+  var total = a * b;
 
   displayModalTotal.innerText = `${total.toFixed(2)}`;
 });
