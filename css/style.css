@@ -1,9 +1,9 @@
 :root {
-  --col1: #f0efeb;
+  --col1: #f1ebe8;
   --col2: #4361ee;
   --col3: #f72585;
   --textCol: #343a40;
-  --bgCol: #eae6fd;
+  --bgCol: #533a71;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap");
@@ -29,7 +29,8 @@ h2,
 p,
 a,
 span,
-li {
+li,
+label {
   color: var(--textCol);
   text-decoration: none;
 }
@@ -134,8 +135,7 @@ i {
 .showcaseList {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  justify-items: center;
+  gap: 1rem;
 }
 
 /* ==================================================
@@ -144,7 +144,7 @@ i {
 
 .showcaseItem {
   background: var(--col1);
-  border-radius: 25px;
+  border-radius: 15px;
   position: relative;
   overflow: hidden;
 }
@@ -152,9 +152,10 @@ i {
 .imgWraper {
   width: 100%;
   display: block;
-  border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
   overflow: hidden;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
 }
 
 .itemImage {
@@ -287,9 +288,6 @@ i {
   margin: 40px auto 50px auto;
   width: 70%;
 }
-.cartDetailNav {
-  width: 40%;
-}
 
 .modalInput,
 .cartDetailInput {
@@ -321,12 +319,12 @@ i {
 }
 
 #modalBtnRemove,
-#detailBtnRemove {
+.detailBtnRemove {
   left: -5%;
 }
 
 #modalBtnAdd,
-#detailBtnAdd {
+.detailBtnAdd {
   right: -5%;
 }
 
@@ -364,86 +362,177 @@ i {
 >>>>> (04) - Cart Details
 ================================================== */
 
-#modalCartDetail {
+.mainWrapper {
   display: grid;
-  /* visibility: hidden; */
-  grid-template-columns: 3fr 1fr;
-  gap: 1rem;
-  position: fixed;
-  top: 3rem;
-  left: 0;
+  grid-template-columns: 4fr 2fr;
   width: 100%;
-  height: 100%;
-  background-color: var(--bgCol);
-  z-index: 50;
-  padding: 4rem 8rem;
-  overflow-y: scroll;
+  height: 100vh;
+  margin-top: 3rem;
 }
 
-.cartItemsList {
+.detailWrapper,
+.sumaryWrapper {
+  display: block;
+  width: 100%;
+}
+
+/* ==================================================
+>>>>> (04.A) - ITEM LIST
+================================================== */
+
+.detailWrapper {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  gap: 1rem;
   height: 100%;
+  padding: 4rem 0 4rem 8rem;
 }
 
-.cartDetailSumary {
+.mainMessage {
   display: block;
-  top: 7rem;
-  right: 8rem;
   background-color: #fff;
-  width: 20rem;
-  height: 21rem;
+  width: 100%;
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 0;
 }
 
-.cartDetailItem {
-  display: flex;
-  justify-content: space-between;
-  padding: 2rem;
+.mainMessage > h2 {
+  margin: 0;
+}
+
+.mainMessage > h2 span {
+  font-weight: 400;
+}
+
+.summaryItem {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 6rem auto;
+  gap: 1rem;
+  justify-content: space-around;
+  background-color: #fff;
   width: 100%;
   height: 10rem;
-  background-color: #fff;
+  border-radius: 15px;
+  padding: 2rem;
   margin-bottom: 1rem;
 }
 
-.detailInfoWrapper {
-  display: flex;
-  align-items: center;
+.itemImgWrapper {
+  display: block;
+  width: 12rem;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 10px;
 }
 
-.itemNameDetail {
-  color: var(--col3);
-  text-transform: uppercase;
-  font-size: 1.2rem;
-  margin: 0 0 0.4rem 0;
+.itemImage {
+  width: 100%;
 }
 
-.itemModelDetail {
+.itemName {
+  margin: 0;
+}
+
+.cartDetailNav {
+  width: 100%;
+  align-self: center;
+}
+
+.delivery,
+.pickUp {
+  color: #717274;
   font-size: 0.8rem;
+}
+
+.remove {
+  display: block;
+  color: #717274;
+  font-size: 1rem;
+  margin: 0 0 0 1rem;
+  text-align: right;
+  align-self: center;
+  cursor: pointer;
+}
+
+.itemPrice {
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* ==================================================
+>>>>> (04.B) - OREDER SUMMARY
+================================================== */
+
+.summaryWrapper {
+  height: 100%;
+  padding: 4rem 8rem 4rem 1rem;
+}
+
+.sticky {
+  display: block;
+  width: 100%;
+  height: 25rem;
+  position: sticky;
+  top: 7rem;
+}
+
+.orderSummary {
+  display: grid;
+  grid-template-areas: "orderTitle orderTitle", "orderSubTotal orderSubTotal",
+    "orderDiscount orderDiscount", "discountOptIn discountOptIn", "orderTotal orderTotal",
+    "payBtn payBtn";
+  grid-auto-rows: minmax(min-content, max-content);
+  background-color: #fff;
+  padding: 2rem;
+  height: 100%;
+  border-radius: 15px;
+}
+
+.orderTitle {
+  grid-area: "orderTitle";
+  border-bottom: 1px solid #f1ebe8;
+  margin: 0;
+  height: 3rem;
+}
+
+.orderSubTotal,
+.orderDiscount,
+.orderTotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 3.5rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.orderSubTotal > span:last-child,
+.orderDiscount > span:last-child,
+.orderTotal > span:last-child {
   font-weight: bold;
 }
 
-.cartDetailPrice,
-.cartDetailPrice > #cartPrice {
-  margin: 1rem 0 0 0;
-  font-size: 0.1.2rem;
-  /* font-weight: bold; */
+.orderSubTotal {
+  grid-area: "orderSubTotal";
 }
 
-.itemImageWraper {
-  width: 12rem;
-  margin-right: 1rem;
+.orderDiscount {
+  grid-area: "orderDiscount";
 }
 
-.detailNavWrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: flex-end;
+.orderTotal {
+  grid-area: "orderTotal";
 }
 
-.detailNavWrapper > .cartTotal {
-  margin-bottom: 0;
+.discountOptIn {
+  grid-area: "discountOptIn";
+  font-size: 0.7rem;
+}
+
+#payBtn {
+  grid-area: "payBtn";
+  height: 2rem;
+  margin-top: 3rem;
 }
 
 /* ==================================================

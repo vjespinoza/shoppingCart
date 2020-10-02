@@ -130,5 +130,3 @@ checkoutBtn.addEventListener("click", () => {
   console.log("Fucking fuck!");
   window.open("/checkout.html");
 });
-
-console.log(checkoutBtn);
