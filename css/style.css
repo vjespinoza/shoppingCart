@@ -554,3 +554,7 @@ i {
   font-size: 10rem;
   text-transform: uppercase;
 }
+
+.testText > h1 {
+  color: white;
+}
