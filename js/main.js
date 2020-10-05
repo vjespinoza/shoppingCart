@@ -118,8 +118,8 @@ modalCofirmBtn.addEventListener("click", () => {
   }
 
   //Set localStorge for displayMoney and displayItems
-  localStorage.setItem("displayMoney", parseFloat(displayMoney.innerText.slice(1)));
-  localStorage.setItem("displayItems", parseFloat(displayItems.innerText.slice(8, -1)));
+  // localStorage.setItem("displayMoney", parseFloat(displayMoney.innerText.slice(1)));
+  // localStorage.setItem("displayItems", parseFloat(displayItems.innerText.slice(8, -1)));
 
   //Set localStorge for modal info
   localStorage.setItem("modalItemImage", displayModalImage.innerHTML.slice(10, -2));
@@ -128,6 +128,7 @@ modalCofirmBtn.addEventListener("click", () => {
   localStorage.setItem("modalItemQuantity", displayModalQty.value);
   localStorage.setItem("modalItemUnitPrice", displayModalPrice.innerText);
   localStorage.setItem("modalItemTotal", displayModalTotal.innerText);
+  localStorage.setItem("trigger", true);
 
   console.log(localStorage);
 });
