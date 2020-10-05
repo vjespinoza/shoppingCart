@@ -116,17 +116,22 @@ modalCofirmBtn.addEventListener("click", () => {
   function itemsTotal(item, newItem) {
     return parseInt(item) + parseInt(newItem);
   }
+
+  //Set localStorge for displayMoney and displayItems
+  localStorage.setItem("displayMoney", parseFloat(displayMoney.innerText.slice(1)));
+  localStorage.setItem("displayItems", parseFloat(displayItems.innerText.slice(8, -1)));
+
+  //Set localStorge for modal info
+  localStorage.setItem("modalItemImage", displayModalImage.innerHTML.slice(10, -2));
+  localStorage.setItem("modalItemName", displayModalName.innerText);
+  localStorage.setItem("modalItemModel", displayModalModel.innerText);
+  localStorage.setItem("modalItemQuantity", displayModalQty.value);
+  localStorage.setItem("modalItemUnitPrice", displayModalPrice.innerText);
+  localStorage.setItem("modalItemTotal", displayModalTotal.innerText);
+
+  console.log(localStorage);
 });
 
 modalCancelBtn.addEventListener("click", () => {
   modal.style.display = "none";
-});
-
-//CHECKOUT+++++++++++++++++++++++
-
-let checkoutBtn = document.getElementById("checkoutBtn");
-
-checkoutBtn.addEventListener("click", () => {
-  console.log("Fucking fuck!");
-  window.open("/checkout.html");
 });
