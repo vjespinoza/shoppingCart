@@ -122,15 +122,17 @@ modalCofirmBtn.addEventListener("click", () => {
   // localStorage.setItem("displayItems", parseFloat(displayItems.innerText.slice(8, -1)));
 
   //Set localStorge for modal info
-  localStorage.setItem("modalItemImage", displayModalImage.innerHTML.slice(10, -2));
-  localStorage.setItem("modalItemName", displayModalName.innerText);
-  localStorage.setItem("modalItemModel", displayModalModel.innerText);
-  localStorage.setItem("modalItemQuantity", displayModalQty.value);
-  localStorage.setItem("modalItemUnitPrice", displayModalPrice.innerText);
-  localStorage.setItem("modalItemTotal", displayModalTotal.innerText);
-  localStorage.setItem("trigger", true);
 
-  console.log(localStorage);
+  let modalItem = {
+    modalItemImage: displayModalImage.innerHTML.slice(10, -2),
+    modalItemName: displayModalName.innerText,
+    modalItemModel: displayModalModel.innerText,
+    modalItemQuantity: displayModalQty.value,
+    modalItemUnitPrice: displayModalPrice.innerText,
+    modalItemTotal: displayModalTotal.innerText,
+  };
+
+  localStorage.setItem("modalItem", JSON.stringify(modalItem));
 });
 
 modalCancelBtn.addEventListener("click", () => {
