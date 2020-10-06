@@ -1,6 +1,3 @@
-//Second test
-//Store information in global variables
-
 //Showcase elements
 let itemImage = document.querySelectorAll(".itemImage");
 let itemName = document.querySelectorAll(".itemName");
@@ -133,6 +130,9 @@ modalCofirmBtn.addEventListener("click", () => {
   };
 
   localStorage.setItem("modalItem", JSON.stringify(modalItem));
+  console.log(modalItem);
+
+  //Validates if an item has already been added to the cart.
 });
 
 modalCancelBtn.addEventListener("click", () => {

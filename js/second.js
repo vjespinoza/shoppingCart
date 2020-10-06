@@ -10,8 +10,8 @@ let summaryModel = document.getElementById("itemModel_01");
 let summaryQuantity = document.getElementById("detailQuantityDisplay_01");
 let summaryPrice = document.getElementById("itemPriceAmount_01");
 
-//Gets localStorage info on page load and feeds summaryItem fields.
-window.addEventListener("load", () => {
+//Prints localStorage info to summaryItem element.
+function printStorageInfo() {
   //Gets localStorage info from modal
   let data = JSON.parse(localStorage.getItem("modalItem"));
   let dataArray = Object.values(data);
@@ -22,23 +22,21 @@ window.addEventListener("load", () => {
   let itemQuantity = dataArray[3];
   let itemPrice = dataArray[4];
 
-  //Prints localStorage info to summaryItem element.
-  function printInfo() {
-    summaryImage.setAttribute("src", itemImage);
-    summaryName.innerText = itemName;
-    summaryModel.innerText = itemModel;
-    summaryQuantity.value = itemQuantity;
-    summaryPrice.innerText = itemPrice;
-  }
+  summaryImage.setAttribute("src", itemImage);
+  summaryName.innerText = itemName;
+  summaryModel.innerText = itemModel;
+  summaryQuantity.value = itemQuantity;
+  summaryPrice.innerText = itemPrice;
+}
 
-  printInfo();
+//Gets localStorage info on page load and feeds summaryItem fields.
+window.addEventListener("load", () => {
+  printStorageInfo();
 });
 
 //Creates new summaryItem when there's a chnage on localStorage.
 window.addEventListener("storage", () => {
   let a = summaryItem.cloneNode(true);
   itemList.append(a);
-  printInfo();
-
-  console.log(a);
+  printStorageInfo();
 });
