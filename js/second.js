@@ -31,7 +31,16 @@ function printStorageInfo() {
 
 //Gets localStorage info on page load and feeds summaryItem fields.
 window.addEventListener("load", () => {
-  printStorageInfo();
+  window.addEventListener("storage", (e) => {
+    console.log(e.storageArea.getItem("modalItem"));
+    let wap = e.storageArea.getItem("modalItem");
+    if (wap == undefined) {
+      alert("!");
+    } else {
+      printStorageInfo();
+      alert("?");
+    }
+  });
 });
 
 //Creates new summaryItem when there's a chnage on localStorage.
