@@ -83,6 +83,8 @@ modalBtnRemove.addEventListener("click", () => {
   }
 });
 
+let itemList = [];
+
 modalCofirmBtn.addEventListener("click", () => {
   modal.style.display = "none";
 
@@ -114,10 +116,6 @@ modalCofirmBtn.addEventListener("click", () => {
     return parseInt(item) + parseInt(newItem);
   }
 
-  //Set localStorge for displayMoney and displayItems
-  // localStorage.setItem("displayMoney", parseFloat(displayMoney.innerText.slice(1)));
-  // localStorage.setItem("displayItems", parseFloat(displayItems.innerText.slice(8, -1)));
-
   //Set localStorge for modal info
 
   let modalItem = {
@@ -129,12 +127,23 @@ modalCofirmBtn.addEventListener("click", () => {
     modalItemTotal: displayModalTotal.innerText,
   };
 
-  localStorage.setItem("modalItem", JSON.stringify(modalItem));
-  console.log(modalItem);
+  itemList.push(modalItem);
+  localStorage.setItem("orderItem", JSON.stringify(itemList));
 
-  //Validates if an item has already been added to the cart.
+  console.log(itemList); //Array
+  console.log(localStorage);
+  console.log(localStorage.orderItem);
+
+  //PENDING!!! Validates if an item has already been added to the cart.
 });
 
 modalCancelBtn.addEventListener("click", () => {
   modal.style.display = "none";
 });
+
+//PROVISIONAL FUNCTION
+function x() {
+  localStorage.clear();
+  console.log(localStorage);
+  location.reload();
+}
