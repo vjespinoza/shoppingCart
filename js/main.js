@@ -148,6 +148,6 @@ function x() {
     location.reload();
 }
 
-window.addEventListener("unload", () => {
-    localStorage.clear();
-});
+// window.addEventListener("unload", () => {
+//     localStorage.clear();
+// });

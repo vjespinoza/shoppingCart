@@ -44,43 +44,43 @@
             <main class="detailWrapper">
                 <div class="mainMessage">
                     <h2>
-                        Cart Details <span>(<span id="itemQty">3</span> Items)</span>
+                        Cart Details <span>(<span id="itemQty"></span> Items)</span>
                     </h2>
                 </div>
                 <section class="itemList" id="itemList">
-                    <article class="summaryItem" id="summaryItem_01">
+                    <article class="summaryItem" id="summaryItem">
                         <div class="itemImgWrapper">
-                            <img class="itemImage" id="itemImage_01" src="" />
+                            <img class="itemImage" id="itemImage" src="" />
                         </div>
 
                         <div class="itemInfoWrapper">
-                            <h2 class="itemName" id="item_Name_01"></h2>
-                            <p class="itemModel" id="itemModel_01"></p>
+                            <h2 class="itemName" id="itemName"></h2>
+                            <p class="itemModel" id="itemModel"></p>
                         </div>
 
                         <div class="itemInfoWrapper">
-                            <p class="itemPrice" id="itemPrice_01">
-                                <span id="itemPriceCopy_01">Unit Price: $</span>
-                                <span id="itemPriceAmount_01"></span>
+                            <p class="itemPrice" id="itemPrice">
+                                <span id="itemPriceCopy">Unit Price:</span>
+                                <span>$<span id="itemPriceAmount"></span></span>
                             </p>
                             <p class="delivery"><i class="fas fa-truck"></i> Delivery</p>
                             <p class="pickUp"><i class="fas fa-store"></i> Store Pick Up</p>
                         </div>
 
                         <nav class="cartDetailNav">
-                            <button class="cartDetailBtn detailBtnRemove" id="detailBtnRemove_01">
+                            <button class="cartDetailBtn detailBtnRemove" id="detailBtnRemove">
                                 <i class="fas fa-minus"></i>
                             </button>
 
                             <input
                                 class="cartDetailInput"
-                                id="detailQuantityDisplay_01"
+                                id="detailQuantityDisplay"
                                 value="0"
                                 type="text"
                                 disabled
                             />
 
-                            <button class="cartDetailBtn detailBtnAdd" id="detailBtnAdd_01">
+                            <button class="cartDetailBtn detailBtnAdd" id="detailBtnAdd">
                                 <i class="fas fa-plus"></i>
                             </button>
                         </nav>
@@ -96,13 +96,13 @@
                         <h2 class="orderTitle">Order Summary</h2>
 
                         <p class="orderSubTotal">
-                            <span id="orderSubTotalCopy">Sub-Total:</span>
-                            <span id="orderSubTotalAmount">$1,200.00</span>
+                            <span id="orderSubTotalCopy">Sub-Total: </span>
+                            <span>$<span id="orderSubTotalAmount"></span></span>
                         </p>
 
                         <p class="orderDiscount">
-                            <span id="orderDiscountCopy">Discount (10%)*:</span>
-                            <span id="orderDiscountAmount">$120.00</span>
+                            <span id="orderDiscountCopy">Discount (10%)*: </span>
+                            <span>$<span id="orderDiscountAmount"></span></span>
                         </p>
 
                         <form class="discountOptIn">
@@ -113,8 +113,8 @@
                         </form>
 
                         <p class="orderTotal">
-                            <span id="orderTotalCopy">Order Total:</span>
-                            <span id="orderTotalAmount">$1,080.00</span>
+                            <span id="orderTotalCopy">Order Total: </span>
+                            <span>$<span id="orderTotalAmount"></span></span>
                         </p>
 
                         <button class="button" id="payBtn">Buy Me!</button>
