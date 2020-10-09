@@ -1,27 +1,27 @@
 :root {
-  --col1: #f1ebe8;
-  --col2: #4361ee;
-  --col3: #f72585;
-  --textCol: #343a40;
-  --bgCol: #533a71;
+    --col1: #f1ebe8;
+    --col2: #4361ee;
+    --col3: #f72585;
+    --textCol: #343a40;
+    --bgCol: #533a71;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap");
 
 html {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 *,
 *:after,
 *:before {
-  box-sizing: inherit;
+    box-sizing: inherit;
 }
 
 body {
-  font-family: "Nunito", sans-serif;
-  min-height: 100vh;
-  background: var(--bgCol);
+    font-family: "Nunito", sans-serif;
+    min-height: 100vh;
+    background: var(--bgCol);
 }
 
 h1,
@@ -31,36 +31,36 @@ a,
 span,
 li,
 label {
-  color: var(--textCol);
-  text-decoration: none;
+    color: var(--textCol);
+    text-decoration: none;
 }
 
 img {
-  display: block;
-  width: 100%;
+    display: block;
+    width: 100%;
 }
 
 i {
-  pointer-events: none;
+    pointer-events: none;
 }
 
 .button {
-  text-transform: uppercase;
-  font-size: 0.7rem;
-  font-weight: 700;
-  outline: none;
-  border: none;
-  border-radius: 2px;
-  padding: 0.5rem 0.8rem;
-  background-color: var(--col2);
-  color: #fff;
-  cursor: pointer;
-  transition: ease-in-out 150ms;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    font-weight: 700;
+    outline: none;
+    border: none;
+    border-radius: 2px;
+    padding: 0.5rem 0.8rem;
+    background-color: var(--col2);
+    color: #fff;
+    cursor: pointer;
+    transition: ease-in-out 150ms;
 }
 
 .button:hover {
-  filter: brightness(1.2);
-  transform: scale(1.1);
+    filter: brightness(1.2);
+    transform: scale(1.1);
 }
 
 /* ==================================================
@@ -68,50 +68,50 @@ i {
 ================================================== */
 
 .navBar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #fff;
-  width: 100%;
-  height: 3rem;
-  padding: 0 8rem;
-  box-shadow: 0 2px 5px rgba(46, 46, 46, 0.3);
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    width: 100%;
+    height: 3rem;
+    padding: 0 8rem;
+    box-shadow: 0 2px 5px rgba(46, 46, 46, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-right: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-right: 1rem;
 }
 
 .navigation {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .menu ul {
-  display: flex;
-  list-style: none;
+    display: flex;
+    list-style: none;
 }
 
 .menu ul li {
-  margin-right: 2rem;
-  text-transform: uppercase;
+    margin-right: 2rem;
+    text-transform: uppercase;
 }
 
 .menu ul li a,
 #shoppingCartDisplay a {
-  font-size: 0.8rem;
-  font-weight: 600;
+    font-size: 0.8rem;
+    font-weight: 600;
 }
 
 #checkoutBtn {
-  margin-left: 1rem;
+    margin-left: 1rem;
 }
 
 /* ==================================================
@@ -119,23 +119,23 @@ i {
 ================================================== */
 
 .showcase {
-  padding: 0 8rem;
-  margin: 10rem 0 7rem 0;
+    padding: 0 8rem;
+    margin: 10rem 0 7rem 0;
 }
 
 @media (max-width: 768px) {
-  .showcase {
-    padding: 0 2rem;
-  }
+    .showcase {
+        padding: 0 2rem;
+    }
 }
 /* ==================================================
 >>>>> (02.A) - SHOWCASE LIST
 ================================================== */
 
 .showcaseList {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
 }
 
 /* ==================================================
@@ -143,80 +143,80 @@ i {
 ================================================== */
 
 .showcaseItem {
-  background: var(--col1);
-  border-radius: 15px;
-  position: relative;
-  overflow: hidden;
+    background: var(--col1);
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
 }
 
 .imgWraper {
-  width: 100%;
-  display: block;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
-  margin-bottom: 2rem;
+    width: 100%;
+    display: block;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
+    margin-bottom: 2rem;
 }
 
 .itemImage {
-  transition: ease-in-out 300ms;
+    transition: ease-in-out 300ms;
 }
 
 .showcaseItem:hover .itemImage {
-  transform: scale(1.05);
-  transition: ease-in-out 300ms;
+    transform: scale(1.05);
+    transition: ease-in-out 300ms;
 }
 
 .itemDescription {
-  margin: 0 2rem 2rem 2rem;
+    margin: 0 2rem 2rem 2rem;
 }
 
 .itemName {
-  color: var(--col3);
-  text-transform: uppercase;
-  font-size: 1rem;
-  margin-bottom: 0;
+    color: var(--col3);
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin-bottom: 0;
 }
 
 .itemModel {
-  font-size: 0.8rem;
-  font-weight: 600;
+    font-size: 0.8rem;
+    font-weight: 600;
 }
 
 .itemDescription > ul {
-  padding-left: 10px;
+    padding-left: 10px;
 }
 
 .itemDescription > p {
-  margin: 0 0 10px 0;
+    margin: 0 0 10px 0;
 }
 
 .itemDescription > ul {
-  margin: 0 0 20px 0;
+    margin: 0 0 20px 0;
 }
 
 .itemDescription > p,
 .itemDescription > ul li {
-  color: var(--textCol);
-  font-size: 0.8rem;
+    color: var(--textCol);
+    font-size: 0.8rem;
 }
 
 .itemPrice,
 .itemDescription > h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--col3);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--col3);
 }
 
 .addToCartBtn {
-  font-size: 1.1rem;
-  padding: 0.8rem;
-  border-radius: 50%;
-  position: absolute;
-  right: 8%;
-  bottom: 8%;
-  background: var(--col2);
+    font-size: 1.1rem;
+    padding: 0.8rem;
+    border-radius: 50%;
+    position: absolute;
+    right: 8%;
+    bottom: 8%;
+    background: var(--col2);
 }
 
 /* ==================================================
@@ -224,139 +224,139 @@ i {
 ================================================== */
 
 .modalDisplay {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 40%;
-  background: #fff;
-  padding: 3rem;
-  border-radius: 25px;
-  box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.8);
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    background: #fff;
+    padding: 3rem;
+    border-radius: 25px;
+    box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.8);
 }
 
 .modalDisplay > h2 {
-  font-weight: 600;
-  margin: 0 0 40px 0;
+    font-weight: 600;
+    margin: 0 0 40px 0;
 }
 
 #itemsInfoModal {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 #itemImageModal {
-  width: 90%;
-  padding-right: 20px;
+    width: 90%;
+    padding-right: 20px;
 }
 
 #modalDescription {
-  border-left: 2px solid var(--col1);
-  padding-left: 20px;
+    border-left: 2px solid var(--col1);
+    padding-left: 20px;
 }
 
 #itemNameModal {
-  color: var(--textCol);
-  font-weight: 600;
-  margin: 0;
+    color: var(--textCol);
+    font-weight: 600;
+    margin: 0;
 }
 
 .cartPrice,
 #cartPrice {
-  text-align: right;
-  font-weight: 400;
-  font-size: 1rem;
-  color: var(--textCol);
+    text-align: right;
+    font-weight: 400;
+    font-size: 1rem;
+    color: var(--textCol);
 }
 
 .cartTotal,
 #cartTotal {
-  text-align: right;
-  font-weight: 700;
-  font-size: 1.2rem;
-  color: var(--col3);
+    text-align: right;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--col3);
 }
 
 .modalNav,
 .cartDetailNav {
-  display: block;
-  position: relative;
-  height: 2rem;
+    display: block;
+    position: relative;
+    height: 2rem;
 }
 
 .modalNav {
-  margin: 40px auto 50px auto;
-  width: 70%;
+    margin: 40px auto 50px auto;
+    width: 70%;
 }
 
 .modalInput,
 .cartDetailInput {
-  font-weight: 700;
-  text-align: center;
-  width: 100%;
-  height: 2rem;
-  outline: none;
-  border-style: none none solid none;
-  border-color: var(--col2);
-  border-width: 1px;
-  background-color: #fff;
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
+    height: 2rem;
+    outline: none;
+    border-style: none none solid none;
+    border-color: var(--col2);
+    border-width: 1px;
+    background-color: #fff;
 }
 
 .modalBtn,
 .cartDetailBtn {
-  padding: 0.5rem 0.7rem;
-  border: none;
-  outline: none;
-  color: var(--textCol);
-  background: none;
-  position: absolute;
-  top: 0;
-  cursor: pointer;
+    padding: 0.5rem 0.7rem;
+    border: none;
+    outline: none;
+    color: var(--textCol);
+    background: none;
+    position: absolute;
+    top: 0;
+    cursor: pointer;
 }
 
 .modalBtn i {
-  font-weight: 700;
+    font-weight: 700;
 }
 
 #modalBtnRemove,
 .detailBtnRemove {
-  left: -5%;
+    left: -5%;
 }
 
 #modalBtnAdd,
 .detailBtnAdd {
-  right: -5%;
+    right: -5%;
 }
 
 .modalBtns {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-evenly;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
 }
 
 #modalCofirmBtn.button {
-  display: block;
-  margin-top: 40px;
-  width: 120px;
-  padding: 0.8rem 0;
+    display: block;
+    margin-top: 40px;
+    width: 120px;
+    padding: 0.8rem 0;
 }
 
 #modalCancelBtn.button {
-  display: block;
-  margin-top: 40px;
-  background: transparent;
-  border: 1px solid var(--col3);
-  color: var(--col3);
-  width: 120px;
+    display: block;
+    margin-top: 40px;
+    background: transparent;
+    border: 1px solid var(--col3);
+    color: var(--col3);
+    width: 120px;
 }
 
 .preventScroll {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 .preventClick {
-  pointer-events: none;
+    pointer-events: none;
 }
 
 /* ==================================================
@@ -364,17 +364,17 @@ i {
 ================================================== */
 
 .mainWrapper {
-  display: grid;
-  grid-template-columns: 4fr 2fr;
-  width: 100%;
-  height: 100vh;
-  margin-top: 3rem;
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+    width: 100%;
+    height: 100vh;
+    margin-top: 3rem;
 }
 
 .detailWrapper,
 .sumaryWrapper {
-  display: block;
-  width: 100%;
+    display: block;
+    width: 100%;
 }
 
 /* ==================================================
@@ -382,83 +382,87 @@ i {
 ================================================== */
 
 .detailWrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  height: 100%;
-  padding: 4rem 0 4rem 8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+    padding: 4rem 0 4rem 8rem;
 }
 
 .mainMessage {
-  display: block;
-  background-color: #fff;
-  width: 100%;
-  border-radius: 15px;
-  padding: 2rem;
-  margin: 0;
+    display: block;
+    background-color: #fff;
+    width: 100%;
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 0;
 }
 
 .mainMessage > h2 {
-  margin: 0;
+    margin: 0;
 }
 
 .mainMessage > h2 span {
-  font-weight: 400;
+    font-weight: 400;
 }
 
 .summaryItem {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr 6rem auto;
-  gap: 1rem;
-  justify-content: space-around;
-  background-color: #fff;
-  width: 100%;
-  height: 10rem;
-  border-radius: 15px;
-  padding: 2rem;
-  margin-bottom: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 6rem auto;
+    gap: 1rem;
+    justify-content: space-around;
+    background-color: #fff;
+    width: 100%;
+    height: 10rem;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 1rem;
+}
+
+.hide {
+    display: none;
 }
 
 .itemImgWrapper {
-  display: block;
-  width: 12rem;
-  height: 100%;
-  overflow: hidden;
-  border-radius: 10px;
+    display: block;
+    width: 12rem;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 10px;
 }
 
 .itemImage {
-  width: 100%;
+    width: 100%;
 }
 
 .itemName {
-  margin: 0;
+    margin: 0;
 }
 
 .cartDetailNav {
-  width: 100%;
-  align-self: center;
+    width: 100%;
+    align-self: center;
 }
 
 .delivery,
 .pickUp {
-  color: #717274;
-  font-size: 0.8rem;
+    color: #717274;
+    font-size: 0.8rem;
 }
 
 .remove {
-  display: block;
-  color: #717274;
-  font-size: 1rem;
-  margin: 0 0 0 1rem;
-  text-align: right;
-  align-self: center;
-  cursor: pointer;
+    display: block;
+    color: #717274;
+    font-size: 1rem;
+    margin: 0 0 0 1rem;
+    text-align: right;
+    align-self: center;
+    cursor: pointer;
 }
 
 .itemPrice {
-  font-size: 1rem;
-  margin: 0;
+    font-size: 1rem;
+    margin: 0;
 }
 
 /* ==================================================
@@ -466,74 +470,74 @@ i {
 ================================================== */
 
 .summaryWrapper {
-  height: 100%;
-  padding: 4rem 8rem 4rem 1rem;
+    height: 100%;
+    padding: 4rem 8rem 4rem 1rem;
 }
 
 .sticky {
-  display: block;
-  width: 100%;
-  height: 25rem;
-  position: sticky;
-  top: 7rem;
+    display: block;
+    width: 100%;
+    height: 25rem;
+    position: sticky;
+    top: 7rem;
 }
 
 .orderSummary {
-  display: grid;
-  grid-template-areas: "orderTitle orderTitle", "orderSubTotal orderSubTotal",
-    "orderDiscount orderDiscount", "discountOptIn discountOptIn", "orderTotal orderTotal",
-    "payBtn payBtn";
-  grid-auto-rows: minmax(min-content, max-content);
-  background-color: #fff;
-  padding: 2rem;
-  height: 100%;
-  border-radius: 15px;
+    display: grid;
+    grid-template-areas: "orderTitle orderTitle", "orderSubTotal orderSubTotal",
+        "orderDiscount orderDiscount", "discountOptIn discountOptIn", "orderTotal orderTotal",
+        "payBtn payBtn";
+    grid-auto-rows: minmax(min-content, max-content);
+    background-color: #fff;
+    padding: 2rem;
+    height: 100%;
+    border-radius: 15px;
 }
 
 .orderTitle {
-  grid-area: "orderTitle";
-  border-bottom: 1px solid #f1ebe8;
-  margin: 0;
-  height: 3rem;
+    grid-area: "orderTitle";
+    border-bottom: 1px solid #f1ebe8;
+    margin: 0;
+    height: 3rem;
 }
 
 .orderSubTotal,
 .orderDiscount,
 .orderTotal {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  height: 3.5rem;
-  margin: 0 0 0.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 3.5rem;
+    margin: 0 0 0.5rem 0;
 }
 
 .orderSubTotal > span:last-child,
 .orderDiscount > span:last-child,
 .orderTotal > span:last-child {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 .orderSubTotal {
-  grid-area: "orderSubTotal";
+    grid-area: "orderSubTotal";
 }
 
 .orderDiscount {
-  grid-area: "orderDiscount";
+    grid-area: "orderDiscount";
 }
 
 .orderTotal {
-  grid-area: "orderTotal";
+    grid-area: "orderTotal";
 }
 
 .discountOptIn {
-  grid-area: "discountOptIn";
-  font-size: 0.7rem;
+    grid-area: "discountOptIn";
+    font-size: 0.7rem;
 }
 
 #payBtn {
-  grid-area: "payBtn";
-  height: 2rem;
-  margin-top: 3rem;
+    grid-area: "payBtn";
+    height: 2rem;
+    margin-top: 3rem;
 }
 
 /* ==================================================
@@ -541,20 +545,20 @@ i {
 ================================================== */
 
 #paymentModule {
-  margin-top: 3rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: calc(100vh - 3rem);
-  padding: 0 4rem;
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 3rem);
+    padding: 0 4rem;
 }
 
 #paymentModule h1 {
-  margin-top: 3rem;
-  font-size: 10rem;
-  text-transform: uppercase;
+    margin-top: 3rem;
+    font-size: 10rem;
+    text-transform: uppercase;
 }
 
 .testText > h1 {
-  color: white;
+    color: white;
 }

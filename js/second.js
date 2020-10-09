@@ -10,80 +10,65 @@ let summaryModel = document.getElementById("itemModel_01");
 let summaryQuantity = document.getElementById("detailQuantityDisplay_01");
 let summaryPrice = document.getElementById("itemPriceAmount_01");
 
-//Prints localStorage info to summaryItem element.
+// let myElement = (document.createElement("p").innerText = "Dummy Text");
+
+//Gets localStorage info from modal
+let data = JSON.parse(localStorage.getItem("orderItem"));
+
+//Prints info from localStorage
 function printStorageInfo() {
-  //Gets localStorage info from modal
-  let data = JSON.parse(localStorage.getItem("orderItem"));
-  //   let dataItems = Object.values(data);
+    let dataKeys = Object.keys(data);
+    let dataValues = Object.values(data);
 
-  console.log(data);
-  console.log(data[0]);
-  console.log(data[1]);
-
-  //   console.log(data);
-  //   console.log(dataArray);
-  //   console.log(typeof data);
-  //   console.log(typeof dataArray);
-
-  //     for (i = 0; i < dataArray.length; i++) {
-  //       console.log(data[i]);
-  //     }
-  //   console.log(dataArray);
-  //   console.log(typeof dataArray);
-  //   console.log(data[0]);
-  //   console.log(data[1]);
-
-  //   let dataArray = Object.values(data);
-  //   console.log(dataArray);
-
-  //   let itemImage = data[0];
-  //   let itemName = data[1];
-  //   let itemModel = data[2];
-  //   let itemQuantity = data[3];
-  //   let itemPrice = data[4];
-
-  //   summaryImage.setAttribute("src", itemImage);
-  //   summaryName.innerText = itemName;
-  //   summaryModel.innerText = itemModel;
-  //   summaryQuantity.value = itemQuantity;
-  //   summaryPrice.innerText = itemPrice;
+    for (i = 0; i < dataKeys.length; i++) {
+        summaryImage.setAttribute("src", dataValues[i].modalItemImage);
+        summaryName.innerText = dataValues[i].modalItemName;
+        summaryModel.innerText = dataValues[i].modalItemModel;
+        summaryQuantity.value = dataValues[i].modalItemQuantity;
+        summaryPrice.innerText = dataValues[i].modalItemUnitPrice;
+    }
 }
 
 window.addEventListener("load", () => {
-  aaahhh();
+    if (localStorage.length === 0 && data == null) {
+        summaryItem.classList.add("hide");
+        console.log("Condition 1");
+    } else if (localStorage.length === 1 && data.length == 1) {
+        summaryItem.classList.remove("hide");
+        printStorageInfo();
+        console.log("Condition 2");
+    } else if (localStorage.length === 1 && data.length >= 2) {
+        for (i = 0; i < data.length; i++) {
+            summaryItem.classList.add("hide");
+            let x = document.createElement("article");
+            x.classList.add("summaryItem");
+            printStorageInfo(x);
+            itemList.append(x);
+            console.log("fuck" + i);
+            console.log(x);
+        }
+
+        console.log(data.length);
+        console.log("Condition 3");
+    }
 });
 
-function aaahhh() {
-  window.addEventListener("storage", (e) => {
-    let a = e.oldValue;
-    //   a[2].slice(-8, -1);
-    //   console.log(a);
-    //   console.log(a[2].slice(-8, -1));
+// summaryItem.classList.remove("hide");
+//             let x = document.createElement("article");
+//             itemList.append(x);
+//             let y = summaryItem.innerHTML;
+//             x.innerHTML = y;
+//             printStorageInfo();
+//             x.classList.add("summaryItem");
 
-    let b = e.newValue;
-    //   b[2].slice(-8, -1);
-    //   console.log(b);
-    //   console.log(b[2].slice(-8, -1));
-
-    if (a == null) {
-      printStorageInfo();
-      console.log("waka waka");
-    } else if (a != null && a != b) {
-      let x = summaryItem.cloneNode(true);
-      itemList.append(x);
-      printStorageInfo();
-      console.log("suanfonson");
-    }
-  });
-}
-
-//Gets localStorage info on page load and feeds summaryItem fields.
-// window.addEventListener("load", () => {
-// });
-
-// Creates new summaryItem when there's a chnage on localStorage.
-// window.addEventListener("storage", () => {
-//   let a = summaryItem.cloneNode(true);
-//   itemList.append(a);
-//   printStorageInfo();
-// });
+// let x = document.createElement("article");
+// let y = summaryItem.innerHTML;
+// for (i = 0; i < data.length; i++) {
+//     x.innerHTML = y;
+//     x.classList.add("summaryItem");
+//     itemList.append(x);
+//     printStorageInfo();
+// }
+window.addEventListener("storage", () => {
+    location.reload();
+});

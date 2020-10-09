@@ -1,126 +1,128 @@
 <!DOCTYPE html>
 <html lang="es-US">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cart Details</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <div class="navBar">
-      <nav class="navigation">
-        <span class="logo"><a href="/">SHOES</a></span>
-        <div class="menu">
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Store</a></li>
-          </ul>
-        </div>
-        <!--menu-->
-      </nav>
-
-      <div id="shoppingCartDisplay">
-        <a href="cart_details.html" target="_blank">
-          <i id="cartIcon" class="fas fa-shopping-cart"></i>
-          <span id="cartMoney"></span>
-          <span id="cartItems"></span>
-        </a>
-        <button id="checkoutBtn" class="button checkoutBtn">Checkout</button>
-      </div>
-
-      <!--shoppingCartDisplay-->
-    </div>
-    <!--navBar-->
-
-    <div class="mainWrapper">
-      <main class="detailWrapper">
-        <div class="mainMessage">
-          <h2>
-            Cart Details <span>(<span id="itemQty">3</span> Items)</span>
-          </h2>
-        </div>
-        <section class="itemList" id="itemList">
-          <article class="summaryItem" id="summaryItem_01">
-            <div class="itemImgWrapper">
-              <img class="itemImage" id="itemImage_01" src="" />
-            </div>
-
-            <div class="itemInfoWrapper">
-              <h2 class="itemName" id="item_Name_01"></h2>
-              <p class="itemModel" id="itemModel_01"></p>
-            </div>
-
-            <div class="itemInfoWrapper">
-              <p class="itemPrice" id="itemPrice_01">
-                <span id="itemPriceCopy_01">Unit Price: $</span>
-                <span id="itemPriceAmount_01"></span>
-              </p>
-              <p class="delivery"><i class="fas fa-truck"></i> Delivery</p>
-              <p class="pickUp"><i class="fas fa-store"></i> Store Pick Up</p>
-            </div>
-
-            <nav class="cartDetailNav">
-              <button class="cartDetailBtn detailBtnRemove" id="detailBtnRemove_01">
-                <i class="fas fa-minus"></i>
-              </button>
-
-              <input
-                class="cartDetailInput"
-                id="detailQuantityDisplay_01"
-                value="0"
-                type="text"
-                disabled
-              />
-
-              <button class="cartDetailBtn detailBtnAdd" id="detailBtnAdd_01">
-                <i class="fas fa-plus"></i>
-              </button>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Cart Details</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+            integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="css/normalize.css" />
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <div class="navBar">
+            <nav class="navigation">
+                <span class="logo"><a href="/">SHOES</a></span>
+                <div class="menu">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Store</a></li>
+                    </ul>
+                </div>
+                <!--menu-->
             </nav>
 
-            <span class="remove" id="itemRemove"><i class="fas fa-trash"></i></span>
-          </article>
-        </section>
-      </main>
+            <div id="shoppingCartDisplay">
+                <a href="cart_details.html" target="_blank">
+                    <i id="cartIcon" class="fas fa-shopping-cart"></i>
+                    <span id="cartMoney"></span>
+                    <span id="cartItems"></span>
+                </a>
+                <button id="checkoutBtn" class="button checkoutBtn">Checkout</button>
+            </div>
 
-      <aside class="summaryWrapper">
-        <div class="sticky">
-          <section class="orderSummary">
-            <h2 class="orderTitle">Order Summary</h2>
-
-            <p class="orderSubTotal">
-              <span id="orderSubTotalCopy">Sub-Total:</span>
-              <span id="orderSubTotalAmount">$1,200.00</span>
-            </p>
-
-            <p class="orderDiscount">
-              <span id="orderDiscountCopy">Discount (10%)*:</span>
-              <span id="orderDiscountAmount">$120.00</span>
-            </p>
-
-            <form class="discountOptIn">
-              <input type="checkbox" id="discountOptIn" />
-              <label for="discountOptIn">Only for payments with Chewbacca Bank cards*</label>
-            </form>
-
-            <p class="orderTotal">
-              <span id="orderTotalCopy">Order Total:</span>
-              <span id="orderTotalAmount">$1,080.00</span>
-            </p>
-
-            <button class="button" id="payBtn">Buy Me!</button>
-          </section>
+            <!--shoppingCartDisplay-->
         </div>
-      </aside>
-    </div>
+        <!--navBar-->
 
-    <script src="js/second.js"></script>
-  </body>
+        <div class="mainWrapper">
+            <main class="detailWrapper">
+                <div class="mainMessage">
+                    <h2>
+                        Cart Details <span>(<span id="itemQty">3</span> Items)</span>
+                    </h2>
+                </div>
+                <section class="itemList" id="itemList">
+                    <article class="summaryItem" id="summaryItem_01">
+                        <div class="itemImgWrapper">
+                            <img class="itemImage" id="itemImage_01" src="" />
+                        </div>
+
+                        <div class="itemInfoWrapper">
+                            <h2 class="itemName" id="item_Name_01"></h2>
+                            <p class="itemModel" id="itemModel_01"></p>
+                        </div>
+
+                        <div class="itemInfoWrapper">
+                            <p class="itemPrice" id="itemPrice_01">
+                                <span id="itemPriceCopy_01">Unit Price: $</span>
+                                <span id="itemPriceAmount_01"></span>
+                            </p>
+                            <p class="delivery"><i class="fas fa-truck"></i> Delivery</p>
+                            <p class="pickUp"><i class="fas fa-store"></i> Store Pick Up</p>
+                        </div>
+
+                        <nav class="cartDetailNav">
+                            <button class="cartDetailBtn detailBtnRemove" id="detailBtnRemove_01">
+                                <i class="fas fa-minus"></i>
+                            </button>
+
+                            <input
+                                class="cartDetailInput"
+                                id="detailQuantityDisplay_01"
+                                value="0"
+                                type="text"
+                                disabled
+                            />
+
+                            <button class="cartDetailBtn detailBtnAdd" id="detailBtnAdd_01">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </nav>
+
+                        <span class="remove" id="itemRemove"><i class="fas fa-trash"></i></span>
+                    </article>
+                </section>
+            </main>
+
+            <aside class="summaryWrapper">
+                <div class="sticky">
+                    <section class="orderSummary">
+                        <h2 class="orderTitle">Order Summary</h2>
+
+                        <p class="orderSubTotal">
+                            <span id="orderSubTotalCopy">Sub-Total:</span>
+                            <span id="orderSubTotalAmount">$1,200.00</span>
+                        </p>
+
+                        <p class="orderDiscount">
+                            <span id="orderDiscountCopy">Discount (10%)*:</span>
+                            <span id="orderDiscountAmount">$120.00</span>
+                        </p>
+
+                        <form class="discountOptIn">
+                            <input type="checkbox" id="discountOptIn" />
+                            <label for="discountOptIn"
+                                >Only for payments with Chewbacca Bank cards*</label
+                            >
+                        </form>
+
+                        <p class="orderTotal">
+                            <span id="orderTotalCopy">Order Total:</span>
+                            <span id="orderTotalAmount">$1,080.00</span>
+                        </p>
+
+                        <button class="button" id="payBtn">Buy Me!</button>
+                    </section>
+                </div>
+            </aside>
+        </div>
+
+        <script src="js/second.js"></script>
+    </body>
 </html>
