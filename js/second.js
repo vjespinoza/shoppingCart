@@ -13,13 +13,24 @@ let summaryDetailBtnRemove = document.getElementById("detailBtnRemove");
 let summaryDetailBtnAdd = document.getElementById("detailBtnAdd");
 let summaryItemRemove = document.getElementById("itemRemove");
 
+let mainMessageQuantity = document.getElementById("itemQty");
+let orderSubTotal = document.getElementById("orderSubTotalAmount");
+let orderDiscount = document.getElementById("orderDiscountAmount");
+let orderDiscountOptin = document.getElementById("discountOptIn");
+let orderTotal = document.getElementById("orderTotalAmount");
+
+//Buttons
+let orderSummayBtn = document.getElementById("payBtn");
+let checkoutBtn = document.getElementById("checkoutBtn")
+
 
 //Gets localStorage info from modal
 let data = JSON.parse(localStorage.getItem("orderItem"));
 
 window.addEventListener("load", () => {
+
+    //Updates item list
     if (localStorage.length === 0 && data == null) {
-        // summaryItem.classList.add("hide");
         summaryItem.innerHTML = `<h2>Your shopping cart is empty</h2>\n
                                 <button class="button" id="backStoreBtn">Back to store</button>`
         summaryItem.style.display = "block"
@@ -29,6 +40,8 @@ window.addEventListener("load", () => {
         console.log("Condition 1");
     } else if (localStorage.length === 1 && data.length >= 1) {
         let dataValues = Object.values(data);
+        let mainQtyList = [];
+        let orderSubTotalList = [];
         for (i = 0; i < data.length; i++) {
             
             //Sets incremental ID's to summaryItem elements.
@@ -58,12 +71,42 @@ window.addEventListener("load", () => {
             x.setAttribute("id", "summaryItem"+[i+1])
             itemList.append(x);
             
-        }
+            //Updates item quantity on message section
+            mainQtyList.push(data[i].modalItemQuantity);
+            mainMessageQuantity.innerHTML = mainQtyList.reduce(function(a, b){return parseInt(a)+parseInt(b)});
+            
+           //Updates Order Summary info - Sub Total
+           orderSubTotalList.push(data[i].modalItemTotal);
+           orderSubTotal.innerHTML = orderSubTotalList.reduce(function(a,b){return (parseFloat(a)+parseFloat(b)).toFixed(2)})
 
-        console.log(data.length);
-        console.log("Condition 2");
+           
+        }
+        //Updates Order Summary info - Discount Opt in & Order Total
+        orderDiscountOptin.addEventListener("change", (e) => {
+            
+            if (e.target.checked) {
+                orderDiscount.innerHTML = ((orderSubTotal.innerHTML * 0.1).toFixed(2));
+                orderTotal.innerHTML = (orderSubTotal.innerHTML - orderDiscount.innerHTML).toFixed(2)
+                console.log("Checked")
+            } else {
+                orderDiscount.innerHTML = 0
+                orderTotal.innerHTML = orderSubTotal.innerHTML
+                console.log("Unchecked")
+            }
+        })
+
+        //Establishes default value of Order Total on page load
+        orderTotal.innerHTML = orderSubTotal.innerHTML
     }
 });
+
+orderSummayBtn.addEventListener("click", () => {
+    window.open("/checkout.html", "_self")
+})
+
+checkoutBtn.addEventListener("click", () => {
+    window.open("/checkout.html", "_self")
+})
 
 window.addEventListener("storage", () => {
     location.reload();

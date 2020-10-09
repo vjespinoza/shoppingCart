@@ -141,12 +141,19 @@ modalCancelBtn.addEventListener("click", () => {
     modal.style.display = "none";
 });
 
+checkoutBtn.addEventListener("click", () => {
+    window.open("/checkout.html", "_self")
+})
+
+
 //PROVISIONAL FUNCTION
 function x() {
     localStorage.clear();
     console.log(localStorage);
     location.reload();
 }
+
+
 
 // window.addEventListener("unload", () => {
 //     localStorage.clear();
