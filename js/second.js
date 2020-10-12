@@ -2,7 +2,7 @@ let displayMoney = document.getElementById("cartMoney");
 let displayItems = document.getElementById("cartItems");
 
 let itemList = document.getElementById("itemList");
-let summaryItem = document.getElementById("summaryItem");
+let summaryItem = document.getElementById("dummyItem");
 
 let summaryImage = document.getElementById("itemImage");
 let summaryName = document.getElementById("itemName");
@@ -62,14 +62,14 @@ window.addEventListener("load", () => {
             summaryPrice.innerText = dataValues[i].modalItemUnitPrice;
                        
             //Hides the original summaryItem
-            // summaryItem.classList.add("hide");
+            summaryItem.classList.add("hide");
 
             //Creates article for each new sumaryItem
             let x = document.createElement("article");
             x.innerHTML = summaryItem.innerHTML;
             x.classList.add("summaryItem");
             x.setAttribute("id", "summaryItem"+[i+1])
-            itemList.append(x);
+            itemList.prepend(x);
             
             //Updates item quantity on message section
             mainQtyList.push(data[i].modalItemQuantity);
@@ -102,30 +102,34 @@ window.addEventListener("load", () => {
         document.querySelectorAll("button.detailBtnAdd").forEach((detailAdd) =>  {
         
             let a = 1
-        
+            
             detailAdd.addEventListener("click", (e) => {
                 let butnId = parseInt(e.target.getAttribute("id").slice(12))
-                let dispQty = parseInt(mainQtyList[butnId - 1])
                 let dispId = document.getElementById("detailQuantityDisplay"+[butnId])
-
+                let dispQty = parseInt(mainQtyList[butnId - 1])
+                
                 dispId.setAttribute("value", dispQty += a)
                 a++
                 
-                console.log(butnId)
-                console.log(dispId) 
-                console.log(mainQtyList) 
-                
-                // console.log(dispQty)
-                // console.log(parseInt(dispQty++))
                 console.log("I add items")
+                console.log(document.querySelectorAll("button.cartDetailBtn"))
             })
         });
-
-        document.querySelectorAll("button.detailBtnRemove").forEach((detailRem) =>  {
-            detailRem.addEventListener("click", () => {
-                console.log("I remove items")
-            })
-        });
+        
+        // document.querySelectorAll("button.detailBtnRemove").forEach((detailRem) =>  {
+            
+        //     let a = 1
+            
+        //     detailRem.addEventListener("click", (e) => {
+        //         let butnId = parseInt(e.target.getAttribute("id").slice(12))
+        //         let dispQty = parseInt(mainQtyList[butnId - 1])
+        //         let dispId = document.getElementById("detailQuantityDisplay"+[butnId])
+                
+        //         dispId.setAttribute("value", dispQty -= a)
+        //         a--
+        //         console.log("I remove items")
+        //     })
+        // });
         
     }
 });
