@@ -38,7 +38,7 @@ addToCartBtn.forEach((addCartBtn) => {
             //btnId defines the item position for itemPrice, then gets ID
             //as string and slice last two characters
             var x = itemPrice.item(btnId).id.slice(length - 2) - 1;
-            //Gets innerHTML content ox x, and slices the first character ($).
+            //Gets innerHTML content of x, and slices the first character ($).
             var z = parseFloat(itemPrice.item(btnId).innerText);
 
             var img = itemImage.item(btnId).getAttribute("src");

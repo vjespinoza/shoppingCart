@@ -26,6 +26,8 @@ let checkoutBtn = document.getElementById("checkoutBtn")
 
 //Gets localStorage info from modal
 let data = JSON.parse(localStorage.getItem("orderItem"));
+let mainQtyList = [];
+let orderSubTotalList = [];
 
 window.addEventListener("load", () => {
 
@@ -40,8 +42,6 @@ window.addEventListener("load", () => {
         console.log("Condition 1");
     } else if (localStorage.length === 1 && data.length >= 1) {
         let dataValues = Object.values(data);
-        let mainQtyList = [];
-        let orderSubTotalList = [];
         for (i = 0; i < data.length; i++) {
             
             //Sets incremental ID's to summaryItem elements.
@@ -62,7 +62,7 @@ window.addEventListener("load", () => {
             summaryPrice.innerText = dataValues[i].modalItemUnitPrice;
                        
             //Hides the original summaryItem
-            summaryItem.classList.add("hide");
+            // summaryItem.classList.add("hide");
 
             //Creates article for each new sumaryItem
             let x = document.createElement("article");
@@ -94,11 +94,42 @@ window.addEventListener("load", () => {
                 console.log("Unchecked")
             }
         })
-
+        
         //Establishes default value of Order Total on page load
         orderTotal.innerHTML = orderSubTotal.innerHTML
+        
+        
+        document.querySelectorAll("button.detailBtnAdd").forEach((detailAdd) =>  {
+        
+            let a = 1
+        
+            detailAdd.addEventListener("click", (e) => {
+                let butnId = parseInt(e.target.getAttribute("id").slice(12))
+                let dispQty = parseInt(mainQtyList[butnId - 1])
+                let dispId = document.getElementById("detailQuantityDisplay"+[butnId])
+
+                dispId.setAttribute("value", dispQty += a)
+                a++
+                
+                console.log(butnId)
+                console.log(dispId) 
+                console.log(mainQtyList) 
+                
+                // console.log(dispQty)
+                // console.log(parseInt(dispQty++))
+                console.log("I add items")
+            })
+        });
+
+        document.querySelectorAll("button.detailBtnRemove").forEach((detailRem) =>  {
+            detailRem.addEventListener("click", () => {
+                console.log("I remove items")
+            })
+        });
+        
     }
 });
+
 
 orderSummayBtn.addEventListener("click", () => {
     window.open("/checkout.html", "_self")
