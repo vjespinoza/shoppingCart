@@ -76,11 +76,11 @@ window.addEventListener("load", () => {
             mainQtyList.push(data[i].modalItemQuantity);
             mainMessageQuantity.innerHTML = mainQtyList.reduce(function(a, b){return parseInt(a)+parseInt(b)});
             
-           //Updates Order Summary info - Sub Total
-           orderSubTotalList.push(data[i].modalItemTotal);
-           orderSubTotal.innerHTML = orderSubTotalList.reduce(function(a,b){return (parseFloat(a)+parseFloat(b)).toFixed(2)})
-
-           
+            //Updates Order Summary info - Sub Total
+            orderSubTotalList.push(data[i].modalItemTotal);
+            orderSubTotal.innerHTML = orderSubTotalList.reduce(function(a,b){return (parseFloat(a)+parseFloat(b)).toFixed(2)})
+            
+            
         }
         //Updates Order Summary info - Discount Opt in & Order Total
         orderDiscountOptin.addEventListener("change", (e) => {
@@ -101,44 +101,40 @@ window.addEventListener("load", () => {
         
         //Edits item quantity on summaryItem element
         document.querySelectorAll("button.cartDetailBtn").forEach((qtyEdit) =>  {
-        
+            
             let x = 1
-            let y = 1
             
             qtyEdit.addEventListener("click", (e) => {
                 let btnId = parseInt(e.target.getAttribute("id").slice(12))
-                let dispId = document.getElementById("detailQuantityDisplay"+[btnId])
+                let dispVal = document.getElementById("detailQuantityDisplay"+[btnId])
+                let dispPrice = document.getElementById("itemPriceAmount"+[btnId])
                 let dispQty = parseInt(mainQtyList[btnId - 1])
                 let btnType = e.target.getAttribute("class").slice(20)
+
                 
                 if (btnType == "BtnAdd") {
-                    let a = (dispQty + x)
-                    x++
-                    dispId.setAttribute("value", a)                 
-                    // dispId.value = b   
-                    console.log( a)            
-                    console.log( x)            
-                    console.log( dispId)            
-                    console.log( dispQty)            
+                    mainQtyList.splice(btnId - 1, 1, dispQty += x)
+                    orderSubTotalList.splice(btnId - 1, 1, dispPrice.innerHTML *= ((dispQty += x)-1))
+                    dispVal.setAttribute("value", mainQtyList[btnId - 1] )
+                    
                     
                 } else{
-                    let b = (dispQty - y)
-                    y++
-                    dispId.setAttribute("value", b)                 
-                    // dispId.value = b               
-                    console.log( b)     
-                    console.log( y)     
-                    console.log( dispId)     
-                    console.log( dispQty)     
-                           
-                    if (dispId.value == 0) {
-                        dispId.value = 1
+                    mainQtyList.splice(btnId - 1, 1, dispQty -= x)
+                    dispVal.setAttribute("value", mainQtyList[btnId - 1] )
+                    
+                    if (dispVal.getAttribute("value") <= 0) {
+                        mainQtyList.splice(btnId - 1, 1, 1)
+                        dispVal.setAttribute("value", 1)
                     }
                 }    
-                // console.log(dispId.attributes[2])         
-                // console.log(dispId.getAttribute("value"))         
-                // console.log(`dispId.value: ${dispId.value}`)         
-                // console.log(`dispQty: ${dispQty}`)         
+                
+                mainMessageQuantity.innerHTML = mainQtyList.reduce(function(a, b){return parseInt(a)+parseInt(b)});
+                orderSubTotal.innerHTML = orderSubTotalList.reduce(function(a,b){return (parseFloat(a)+parseFloat(b)).toFixed(2)})
+               
+                console.log(dispVal.getAttribute("value"))
+                console.log(mainQtyList)
+                console.log(orderSubTotalList)
+                
             })
         });
         
