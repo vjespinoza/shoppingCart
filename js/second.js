@@ -28,6 +28,7 @@ let checkoutBtn = document.getElementById("checkoutBtn")
 let data = JSON.parse(localStorage.getItem("orderItem"));
 let mainQtyList = [];
 let orderSubTotalList = [];
+let orderPriceList = [];
 
 window.addEventListener("load", () => {
 
@@ -68,13 +69,16 @@ window.addEventListener("load", () => {
             let x = document.createElement("article");
             x.innerHTML = summaryItem.innerHTML;
             x.classList.add("summaryItem");
-            x.classList.add("grab")
             x.setAttribute("id", "summaryItem"+[i+1])
             itemList.prepend(x);
             
             //Updates item quantity on message section
             mainQtyList.push(data[i].modalItemQuantity);
             mainMessageQuantity.innerHTML = mainQtyList.reduce(function(a, b){return parseInt(a)+parseInt(b)});
+            
+            //Updates unit price
+            orderPriceList.push(data[i].modalItemUnitPrice);
+            // summaryPrice.innerText = 123123
             
             //Updates Order Summary info - Sub Total
             orderSubTotalList.push(data[i].modalItemTotal);
@@ -88,11 +92,9 @@ window.addEventListener("load", () => {
             if (e.target.checked) {
                 orderDiscount.innerHTML = ((orderSubTotal.innerHTML * 0.1).toFixed(2));
                 orderTotal.innerHTML = (orderSubTotal.innerHTML - orderDiscount.innerHTML).toFixed(2)
-                console.log("Checked")
             } else {
                 orderDiscount.innerHTML = 0
                 orderTotal.innerHTML = orderSubTotal.innerHTML
-                console.log("Unchecked")
             }
         })
         
@@ -107,19 +109,21 @@ window.addEventListener("load", () => {
             qtyEdit.addEventListener("click", (e) => {
                 let btnId = parseInt(e.target.getAttribute("id").slice(12))
                 let dispVal = document.getElementById("detailQuantityDisplay"+[btnId])
-                let dispPrice = document.getElementById("itemPriceAmount"+[btnId])
+                let dispPrice = orderPriceList[btnId - 1]
                 let dispQty = parseInt(mainQtyList[btnId - 1])
                 let btnType = e.target.getAttribute("class").slice(20)
-
+                
+                // dispPrice.innerHTML = orderPriceList[btnId - 1]
                 
                 if (btnType == "BtnAdd") {
                     mainQtyList.splice(btnId - 1, 1, dispQty += x)
-                    orderSubTotalList.splice(btnId - 1, 1, dispPrice.innerHTML *= ((dispQty += x)-1))
+                    orderSubTotalList.splice(btnId - 1, 1, dispPrice *= ((dispQty += x)-1))
                     dispVal.setAttribute("value", mainQtyList[btnId - 1] )
                     
                     
                 } else{
                     mainQtyList.splice(btnId - 1, 1, dispQty -= x)
+                    orderSubTotalList.splice(btnId - 1, 1, dispPrice *= ((dispQty += x)-1))
                     dispVal.setAttribute("value", mainQtyList[btnId - 1] )
                     
                     if (dispVal.getAttribute("value") <= 0) {
@@ -130,10 +134,8 @@ window.addEventListener("load", () => {
                 
                 mainMessageQuantity.innerHTML = mainQtyList.reduce(function(a, b){return parseInt(a)+parseInt(b)});
                 orderSubTotal.innerHTML = orderSubTotalList.reduce(function(a,b){return (parseFloat(a)+parseFloat(b)).toFixed(2)})
-               
-                console.log(dispVal.getAttribute("value"))
-                console.log(mainQtyList)
-                console.log(orderSubTotalList)
+                orderTotal.innerHTML = orderSubTotal.innerHTML - orderDiscount.innerHTML
+                
                 
             })
         });
