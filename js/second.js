@@ -133,7 +133,7 @@ window.addEventListener("load", () => {
                 }    
                 
                 mainMessageQuantity.innerHTML = mainQtyList.reduce(function(a, b){return parseInt(a)+parseInt(b)});
-                orderSubTotal.innerHTML = orderSubTotalList.reduce(function(a,b){return (parseFloat(a)+parseFloat(b)).toFixed(2)})
+                orderSubTotal.innerHTML = orderSubTotalList.reduce(function(a, b){return (parseFloat(a)+parseFloat(b)).toFixed(2)})
                 orderTotal.innerHTML = orderSubTotal.innerHTML - orderDiscount.innerHTML
                 
                 
@@ -142,7 +142,38 @@ window.addEventListener("load", () => {
         
         
     }
+    
+    document.querySelectorAll(".remove").forEach((remItemBtn) => {
+        remItemBtn.addEventListener("click", (e) => {
+            let remItemBtn_ID = e.target.getAttribute("id").slice(10)
+            let itemsList = document.querySelectorAll("#summaryItem"+[remItemBtn_ID])
+            let qtyList = itemList.querySelectorAll(".cartDetailInput")
+            
+            if (e.target) {
+                itemsList[0].remove()
+                orderSubTotalList.splice(remItemBtn_ID - 1, 1,)
+                
+                if (orderSubTotalList.length > 0) {
+                    mainMessageQuantity.innerHTML = mainMessageQuantity.innerHTML - qtyList[remItemBtn_ID].value
+                    orderSubTotal.innerHTML = orderSubTotalList.reduce(function(a, b){return (parseFloat(a)+parseFloat(b)).toFixed(2)})
+                } else {
+                    mainMessageQuantity.innerHTML = 0
+                    orderSubTotal.innerHTML = 0
+                }
+                orderTotal.innerHTML = orderSubTotal.innerHTML - orderDiscount.innerHTML
+                
+                // console.log(orderSubTotalList)
+                // console.log(mainQtyList)
+                // console.log(itemList)
+                // console.log(qtyList)
+                console.log(qtyList[remItemBtn_ID].value)
+            }
+        })
+    })
 });
+
+
+
 
 
 orderSummayBtn.addEventListener("click", () => {
