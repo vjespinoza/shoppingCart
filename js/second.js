@@ -102,7 +102,8 @@ window.addEventListener("load", () => {
         //Edits item quantity on summaryItem element
         document.querySelectorAll("button.cartDetailBtn").forEach((qtyEdit) =>  {
         
-            let a = 1
+            let x = 1
+            let y = 1
             
             qtyEdit.addEventListener("click", (e) => {
                 let btnId = parseInt(e.target.getAttribute("id").slice(12))
@@ -111,21 +112,33 @@ window.addEventListener("load", () => {
                 let btnType = e.target.getAttribute("class").slice(20)
                 
                 if (btnType == "BtnAdd") {
-                    let b = (dispQty += a)
-                    a++
-                    // dispId.setAttribute("value", [dispId.value = b])                 
-                    dispId.value = b                 
+                    let a = (dispQty + x)
+                    x++
+                    dispId.setAttribute("value", a)                 
+                    // dispId.value = b   
+                    console.log( a)            
+                    console.log( x)            
+                    console.log( dispId)            
+                    console.log( dispQty)            
                     
                 } else{
-                    dispQty = dispId.value
-                    dispId.value -= a                 
-                    // dispId.setAttribute("value", [dispId.value -= a])                 
+                    let b = (dispQty - y)
+                    y++
+                    dispId.setAttribute("value", b)                 
+                    // dispId.value = b               
+                    console.log( b)     
+                    console.log( y)     
+                    console.log( dispId)     
+                    console.log( dispQty)     
+                           
                     if (dispId.value == 0) {
                         dispId.value = 1
                     }
                 }    
-                console.log(`dispId.value: ${dispId.value}`)         
-                console.log(`dispQty: ${dispQty}`)         
+                // console.log(dispId.attributes[2])         
+                // console.log(dispId.getAttribute("value"))         
+                // console.log(`dispId.value: ${dispId.value}`)         
+                // console.log(`dispQty: ${dispQty}`)         
             })
         });
         
