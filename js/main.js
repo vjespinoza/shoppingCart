@@ -146,7 +146,7 @@ modalCancelBtn.addEventListener("click", () => {
 });
 
 checkoutBtn.addEventListener("click", () => {
-    window.open("/checkout.html", "_self")
+    window.open("checkout.html", "_self")
 })
 
 function removeClasses() {

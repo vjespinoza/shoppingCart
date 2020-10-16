@@ -38,7 +38,7 @@ window.addEventListener("load", () => {
                                 <button class="button" id="backStoreBtn">Back to store</button>`
         summaryItem.style.display = "block"
         document.getElementById("backStoreBtn").addEventListener("click", ()=>{
-            window.open("/index.html","_self")
+            window.open("index.html","_self")
         })
     } else if (localStorage.length >= 1 && data.length >= 1) {
         let dataValues = Object.values(data);
@@ -169,12 +169,12 @@ window.addEventListener("load", () => {
 
 orderSummayBtn.addEventListener("click", () => {
     localStorage.clear()
-    window.open("/checkout.html", "_self")
+    window.open("checkout.html", "_self")
 })
 
 checkoutBtn.addEventListener("click", () => {
     localStorage.clear()
-    window.open("/checkout.html", "_self")
+    window.open("checkout.html", "_self")
 })
 
 window.addEventListener("storage", () => {
