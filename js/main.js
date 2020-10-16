@@ -58,6 +58,12 @@ addToCartBtn.forEach((addCartBtn) => {
 
         // updatePriceDisplay();
         updateModal();
+        console.log(modal.getAttribute("style"))
+        
+        // if (modal.hasAttribute("style")) {
+        if (modal.getAttribute("style") === "display: block;") {
+            addClasses()
+        } 
     });
 });
 
@@ -130,21 +136,36 @@ modalCofirmBtn.addEventListener("click", () => {
     itemList.push(modalItem);
     localStorage.setItem("orderItem", JSON.stringify(itemList));
 
-    console.log(itemList); //Array
-    console.log(localStorage);
-    console.log(localStorage.orderItem);
-
+    removeClasses()
     //PENDING!!! Validates if an item has already been added to the cart.
 });
 
 modalCancelBtn.addEventListener("click", () => {
     modal.style.display = "none";
+    removeClasses()
 });
 
 checkoutBtn.addEventListener("click", () => {
     window.open("/checkout.html", "_self")
 })
 
+function removeClasses() {
+    let x = document.querySelector("main.showcase")
+    let y = document.querySelector("body")
+    x.classList.remove("preventClick")
+    x.classList.remove("noSelect")
+    y.classList.remove("preventScroll")
+    console.log("Modal is NOT active")
+}
+
+function addClasses() {
+    let x = document.querySelector("main.showcase")
+    let y = document.querySelector("body")
+    x.classList.add("preventClick")
+    x.classList.add("noSelect")
+    y.classList.add("preventScroll")
+    console.log("Modal is active")
+}
 
 //PROVISIONAL FUNCTION
 function x() {
@@ -155,6 +176,4 @@ function x() {
 
 
 
-// window.addEventListener("unload", () => {
-//     localStorage.clear();
-// });
+

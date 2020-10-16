@@ -40,7 +40,6 @@ window.addEventListener("load", () => {
         document.getElementById("backStoreBtn").addEventListener("click", ()=>{
             window.open("/index.html","_self")
         })
-        console.log("Condition 1");
     } else if (localStorage.length >= 1 && data.length >= 1) {
         let dataValues = Object.values(data);
         for (i = 0; i < data.length; i++) {
@@ -113,13 +112,10 @@ window.addEventListener("load", () => {
                 let dispQty = parseInt(mainQtyList[btnId - 1])
                 let btnType = e.target.getAttribute("class").slice(20)
                 
-                // dispPrice.innerHTML = orderPriceList[btnId - 1]
-                
                 if (btnType == "BtnAdd") {
                     mainQtyList.splice(btnId - 1, 1, dispQty += x)
                     orderSubTotalList.splice(btnId - 1, 1, dispPrice *= ((dispQty += x)-1))
                     dispVal.setAttribute("value", mainQtyList[btnId - 1] )
-                    
                     
                 } else{
                     mainQtyList.splice(btnId - 1, 1, dispQty -= x)
@@ -152,9 +148,10 @@ window.addEventListener("load", () => {
             if (e.target) {
                 itemsList[0].remove()
                 orderSubTotalList.splice(remItemBtn_ID - 1, 1,)
+                mainQtyList.splice(remItemBtn_ID - 1, 1,)
                 
                 if (orderSubTotalList.length > 0) {
-                    mainMessageQuantity.innerHTML = mainMessageQuantity.innerHTML - qtyList[remItemBtn_ID].value
+                    mainMessageQuantity.innerHTML = mainQtyList.reduce(function(a, b){return parseInt(a)+parseInt(b)});
                     orderSubTotal.innerHTML = orderSubTotalList.reduce(function(a, b){return (parseFloat(a)+parseFloat(b)).toFixed(2)})
                 } else {
                     mainMessageQuantity.innerHTML = 0
@@ -162,11 +159,6 @@ window.addEventListener("load", () => {
                 }
                 orderTotal.innerHTML = orderSubTotal.innerHTML - orderDiscount.innerHTML
                 
-                // console.log(orderSubTotalList)
-                // console.log(mainQtyList)
-                // console.log(itemList)
-                // console.log(qtyList)
-                console.log(qtyList[remItemBtn_ID].value)
             }
         })
     })
@@ -175,12 +167,13 @@ window.addEventListener("load", () => {
 
 
 
-
 orderSummayBtn.addEventListener("click", () => {
+    localStorage.clear()
     window.open("/checkout.html", "_self")
 })
 
 checkoutBtn.addEventListener("click", () => {
+    localStorage.clear()
     window.open("/checkout.html", "_self")
 })
 

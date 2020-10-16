@@ -1,49 +1,40 @@
 <!DOCTYPE html>
 <html lang="es-US">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Checkout</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <div class="navBar">
-      <nav class="navigation">
-        <span class="logo"><a href="/">SHOES</a></span>
-        <div class="menu">
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Store</a></li>
-          </ul>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Checkout</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+            integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="css/normalize.css" />
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <div class="navBar">
+            <nav class="navigation">
+                <span class="logo"><a href="/">SHOES</a></span>
+                <div class="menu">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Store</a></li>
+                    </ul>
+                </div>
+                <!--menu-->
+            </nav>
+
+            <!--shoppingCartDisplay-->
         </div>
-        <!--menu-->
-      </nav>
+        <!--navBar-->
 
-      <div id="shoppingCartDisplay">
-        <a href="cart_details.html" target="_blank">
-          <i id="cartIcon" class="fas fa-shopping-cart"></i>
-          <span id="cartMoney"></span>
-          <span id="cartItems"></span>
-        </a>
-        <button id="checkoutBtn" class="button checkoutBtn">Checkout</button>
-      </div>
+        <main id="paymentModule">
+            <h1>Your purchase was successful!</h1>
+        </main>
 
-      <!--shoppingCartDisplay-->
-    </div>
-    <!--navBar-->
-
-    <main id="paymentModule">
-      <h1>Pay for those shoes nigga!!!!</h1>
-    </main>
-
-    <!-- <script src="js/main.js"></script> -->
-  </body>
+        <!-- <script src="js/main.js"></script> -->
+    </body>
 </html>

@@ -1,9 +1,10 @@
 :root {
-    --col1: #f1ebe8;
-    --col2: #4361ee;
-    --col3: #f72585;
+    --col1: #f1f1f1;
+    --col3: #ef476f;
+    --col2: #f6aa1c;
     --textCol: #343a40;
-    --bgCol: #533a71;
+    /* --bgCol: #003049; */
+    --bgCol: #353535;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap");
@@ -202,8 +203,8 @@ i {
     font-size: 0.8rem;
 }
 
-.itemPrice,
-.itemDescription > h3 {
+.itemDescription > h3,
+.itemDescription > h3 .itemPrice {
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--col3);
@@ -357,6 +358,15 @@ i {
 
 .preventClick {
     pointer-events: none;
+}
+
+.noSelect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 /* ==================================================
